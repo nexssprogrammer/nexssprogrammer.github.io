@@ -31,7 +31,7 @@ github_username: mapoart
 
 # Build settings
 # theme: nexss-theme
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 # Exclude from processing.
