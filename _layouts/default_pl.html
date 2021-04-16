@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en">
+{%- include head.html -%}
+
+<body>
+  <div class="wrap">
+    <!-- header -->
+    
+{%- include header_pl.html -%}
+                <style>
+  #faq a:visited,
+  #faq a:link {
+    color: yellow;
+  }
+
+  #faq a:hover {
+    color: greenyellow;
+  }
+
+  #faq ul li {
+    color: greenyellow;
+  }
+</style>
+{{ content }}    
+        <!-- footer -->
+    
+{%- include footer_pl.html -%}
+  </div>
+
+
+</body></html>

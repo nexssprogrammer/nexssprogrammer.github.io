@@ -1,0 +1,17 @@
+body {
+    background-color: #0D47A1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+a {
+    color:#5C6BC0;
+}
+
+a:hover {
+    color: #536DFE;
+}
+
+a.selected {
+    font-weight: bold;
+}
