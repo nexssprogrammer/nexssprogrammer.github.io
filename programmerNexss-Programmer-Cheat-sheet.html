@@ -1,0 +1,298 @@
+---
+title: ""
+permalink: /programmer.html/Nexss-Programmer-Cheat-sheet
+---
+<!DOCTYPE html><html lang="en"><!--[if lt IE 7 ]> 
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>    
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>    
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><head>
+  <base href="/">
+  <!-- TITLE OF SITE -->
+  <title>Nexss Programmer Cheat sheet - Nexss Programmer</title>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="nexss,project,file,programmer,```,```sh">
+  <meta name="description" content="Nexss Programmer Cheat sheet - Nexss Programmer Documentation">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico">
+  <!-- BOOTSTRAP-->
+  <link href="assets/doc//css/bootstrap.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS-->
+  <link href="assets/doc//css/styles.css" rel="stylesheet">
+  <link href="assets/doc//css/theme_blue.css" rel="stylesheet">
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/doc//js/jquery-3.2.1.js"></script>
+  <script src="assets/doc//js/bootstrap.js"></script>
+
+  <!-- FONT AWESOME-->
+  <link href="assets/doc//css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+      // var y = document.querySelectorAll("pre code");
+      // for (var i = 0; i < y.length; i++) {
+      //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+      // }
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'PT Mono', monospace;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+
+    <div class="header">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-light navbar-toggleable-sm">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="navigation-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item menu__item">
+                    <a class="nav-link nav-link_mobile" href="/">Back to Nexss Home Page</a>
+                  </li>
+                  <li>
+                    <form><input autofocus="" name="search" id="search"><button>SEARCH</button></form>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1012px;margin:0 auto;">
+    <div class="float-right">
+            </div>
+    <div class="mt-4 markdown-content">
+        <h1>Nexss Programmer Cheat sheet</h1>
+        <hr>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
+                <h2>Install</h2>
+<pre><code class="language-sh">nexss program.r
+nexss program.[any extension]
+npx nexss program.r # without installing nexss
+nexss file add my.rs --edit # Will open list of templates for particular language, install editor (if not exists) and open file for editing. </code></pre>
+<h2>Run different Nexss Progremmer envs (different languages/packages/defaults etc)</h2>
+<p>Nexss Programmer has special env variable which can be changed to work with different environment, cache etc.</p>
+<h3>Powershell</h3>
+<pre><code class="language-ps1">$env:NEXSS_HOME_PATH = "C:/Users/mapoart/.nexssSomethingElse/"
+nexss -env --nocache # This page will confirm that env has been changed.
+[System.Environment]::SetEnvironmentVariable('NEXSS_HOME_PATH','C:/Users/mapoart/.nexssSomethingElse/',[System.EnvironmentVariableTarget]::User)</code></pre>
+<h2>Quick/Helper functions (-)</h2>
+<p>Nexss programmer has some quick functions which helps during development of Nexss Programmer packages but not only..</p>
+<ul>
+<li><strong>-help</strong> list of quick functions / nexss -help<br>
+<img src="https://user-images.githubusercontent.com/8799218/94475191-047b9c80-01cf-11eb-8218-2a72fb4cc1b3.png" alt="image">  </li>
+<li><strong>-env</strong><br>
+<img src="https://user-images.githubusercontent.com/8799218/94474629-33ddd980-01ce-11eb-9094-7fc52d712517.png" alt="image">  </li>
+</ul>
+<pre><code class="language-sh"># run packages/commands folder .nexss/packages
+nexss Id # runs Id package from .nexss/packages/Id
+nexss Id help # shows help for Id package
+# below adds Debug package to the project AND copy package 
+# to the project so you can customize it for your needs
+nexss pkg add Id --copyPackage --saveNexss  --forceNexss  
+
+nexss myprogram.ext --nxsOnly # will run without input of Nexss Programmer, 
+# so if you wish take input from the user and not use defaults of Nexss Programmer Project like "cwd", "start", "nexss". Nexss Programmer:  2.1.2+
+nxs program.ext # is the same as above so: nexss myprogram.ext --nxsOnly // Nexss Programmer: 2.1.2+</code></pre>
+<h2>Debug Run</h2>
+<p>From version 2.1 there is new feature <code>--nxsDebug</code> which shows detailed information during project, or .nexss files run. Shows also how the data is changing during execution.</p>
+<pre><code class="language-sh">nexss myfile.js --nxsDebug
+nexss myfile.nexss --nxsDebug
+nexss MyProject --nxsDebug
+nexss MyProject --nxsDebug=2 # different view of debugging
+nexss MyProject --nxsDebug=nodiff # will display data, not the changes of the data.</code></pre>
+<h2>nxsStop</h2>
+<p>if you pass nxsStop either in <code>--nxsStop</code> or in the data inside like in the package, the nexss programmer will stop in the next line.</p>
+<h2>Dry Run</h2>
+<pre><code class="language-sh">nexss Id --nxsDry # nxsDry (not execute anything - info) - only **2.1+** version</code></pre>
+<h2>Start Data</h2>
+<p>Example command: <code>nexss Id</code></p>
+<p>By default Nexss Programmer has some data filled in:</p>
+<ul>
+<li><strong>start</strong> - timestamp in millisecond</li>
+<li><strong>cwd</strong> - Current Working Directory - This is very handy, as many times you will be using different modules where cwd pointing just to the current directory (not module one).</li>
+<li><strong>nexss</strong> - contains nexss version</li>
+</ul>
+<h2>Pipe Nexss Commands as well as others</h2>
+<p><img src="https://user-images.githubusercontent.com/53263666/73312996-5cba6300-422a-11ea-91e0-f977bffa66f4.png" alt="image"></p>
+<h2>Parameters</h2>
+<p>All below can also be used in the json file eg. config.json. (Nexss Programmer 2.1.0+)</p>
+<pre><code class="language-sh"># parameters with not alphanumeric characters like ,(comma) needs to be surrounded by " or '
+nexss Data/Concat --concatFields="cwd,debug" 
+# From version 2.0.9 you can pass/combine parameters in the command line eg:
+# eg:
+nexss Id --x=myfolder --myenv='${process.env.NEXSS_APPS_PATH}\\${x}'
+nexss id --x=1000 --y=2 --sum='${x+y}' --pow='${x**y}'# ${} must be surrounded only by ' not " !!
+# from 2.1
+nexss Id --arch='${process.arch===\"x64\"?64:32}'</code></pre>
+<h2>Global</h2>
+<pre><code class="language-sh">nexss --version # eg. 2.0.6
+nexss myprogram.js --nxsFields="cwd,debug" # will display only cwd and debug data fields (" is required)
+nexss myprogram.js --nxsField=cwd # will only display value of cwd (So current working directory)</code></pre>
+<h2>Files</h2>
+<pre><code class="language-sh"># Without Nexss Programmer Project
+
+nexss file # displays help for file and available commands
+nexss file add randomfile.js #should show templates select helloWorld
+nexss file add randomfile.js #this should show that file exists
+nexss file add randomfile.js --template=x # also already exists
+nexss file delete randomfile.js # Should  see You are not in the Nexss Programmer Project
+rm randomfile.js # file is removed.
+nexss file add randomfile.js --template=helloWorld # Adds new file from template HelloWorld
+nexss randomfile.js # run file: Json should contain "NodeJSOutput":"Hello from NodeJS!
+
+#With Nexss Programmer Project
+nexss project new MyProject #should display among others 'Project 'MyProject' is ready'
+cd MyProject
+nexss file add file1.js # should display file src/file1.js has been created
+nexss project info # should display information about project</code></pre>
+<p><img src="https://user-images.githubusercontent.com/53263666/72833394-0d52c080-3c87-11ea-99fb-63f4bde0564b.png" alt="image"></p>
+<pre><code class="language-sh">nexss . #run the whole project, now there is one file 
+cd .. # go to previous folder
+nexss MyProject  # nexss allow also run project by specyfying the folder and run the project inside
+nexss pkg add Mouse/Move --x=1 --y=1 --saveNexss # this add move mouse to the position of 1x1 so left top corner 
+# when we start the project, mouse move will be at the second position (keep in mind that you can pass 
+data through the packages and files so all data created in the file file1.js will be available in the package Mouse/Move)
+# you can edit packages by copying them local using --CopyPackage more: nexss pkg help
+# next you can add another file let say perl:
+nexss file add my.pl # this will be run after mouse move
+nexss . # start project again</code></pre>
+<pre><code class="language-sh">nexss project new myproject # or nexss p new myproject
+cd myproject
+nexss start # OR nexss s OR nexss .     - run the project
+nexss s --server # if you don't have specified server, this will start the server at 127.0.0.1
+# path in the url becoming sequence eg.
+# http://localhost:8080/myseq1/abc will load myseq/abc sequence
+nexss s --verbose # this will display all extra information during run
+nexss project info # or nexss p i - display info about project</code></pre>
+<h1>Packages (Nexss Projects)</h1>
+<pre><code class="language-sh">nexss pkg list --json # list of available packages
+nexss pkg l ocr --json # Search for OCR packages with json output
+nexss package list video # List Video related packages
+nexss pkg init # install all packages dependencies. It is run during first run of nexss.
+# Add Packages/Actions
+# Adds Show Desktop to the package
+# copyPackage will copy Nexss Package to your project (and you can modify it).
+nexss pkg add Keyboard --type="#d" --copyPackage --saveNexss --forceNexss </code></pre>
+<h1>Specific language commands</h1>
+<pre><code class="language-sh">nexss js # display all available specific language commands
+nexss js pm # displays package managers available for JavaScript/NodeJS (select your language).
+nexss js compilers # displays compilers
+nexss js errors # displays errors and supports available for particular language
+nexss js default compiler # displays compilers available for the language
+nexss js default compiler node # set the default compiler - it may install and change the current one
+nexss js default compiler unset # unset the default compiler so it will be taken first from the config 
+</code></pre>
+<h1>Config (nexss config)</h1>
+<pre><code class="language-sh">nexss config get --json
+nexss config get --json --select sequences # for now the select only works with --json flag
+# for --select only JSON works for now.
+nexss config get --configPath c:/Users/mapoart/.nexss/packages/Nexss/Test/Sequences --select sequences --json</code></pre>
+<h1>Test</h1>
+<p>nexss test # displays available tests. If you are in the project it will look at the test folder of the project. If you want to run "global" tests for nexss programmer itself go to the any folder which is not a Nexss Programmer project and run 'nexss test' again.
+nexss test languages # This is a long time taking command. It will install all compilers and test the languages by default and helloWorld templates to make sure everything works.</p>
+<h2>Messages and Errors</h2>
+<p>Nexss Programmer display messsages and errors during run. It's a bit special because every message or error going through STDERR package</p>
+<ul>
+<li><code>NEXSS/ok:My ok message</code><br>
+<img src="https://user-images.githubusercontent.com/53263666/73504903-32ef7080-43d1-11ea-8df0-9814c111d246.png" alt="image"></li>
+<li><code>NEXSS/info:My info message</code><br>
+<img src="https://user-images.githubusercontent.com/53263666/73505097-c9bc2d00-43d1-11ea-9d0f-f7b39afda58d.png" alt="image"></li>
+<li><code>NEXSS/error:Just display error message</code><br>
+<img src="https://user-images.githubusercontent.com/53263666/73504997-7b0e9300-43d1-11ea-8d42-f7c0aae73017.png" alt="image"></li>
+<li><code>NEXSS/warn:Display warning message</code><br>
+<img src="https://user-images.githubusercontent.com/53263666/73504946-52869900-43d1-11ea-9fea-9fdf4aeeac2a.png" alt="image"></li>
+<li>If you put to the STDERR text it will display as error with extra information inside eg:
+<img src="https://user-images.githubusercontent.com/53263666/73504854-0f2c2a80-43d1-11ea-958a-d2b471e726eb.png" alt="image"></li>
+<li>For debuging the Nexss Programmer CLI App use trace</li>
+<li><code>NEXSS/trace:Display trace message</code><br>
+<img src="https://user-images.githubusercontent.com/53263666/73505154-f5d7ae00-43d1-11ea-8e9b-06037ad5989a.png" alt="image"></li>
+</ul>
+
+            </div>
+            <div class="flex-shrink-0 col-12 col-md-3">
+                <ul>
+<li><a href="programmer.html/Home">Home</a></li>
+<li>Getting Started
+<ul>
+<li><a href="programmer.html/Concept-Overview">Overview</a></li>
+<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
+<li><a href="programmer.html/Nexss-Files">.nexss</a></li>
+<li><a href="programmer.html/Tutorials">Tutorials</a></li>
+<li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
+<li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
+</ul></li>
+<li>Nexss Programmer Parts
+<ul>
+<li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
+<li><a href="programmer.html/Sequences">Sequences</a></li>
+<li><a href="programmer.html/Projects">New Projects</a></li>
+<li><a href="programmer.html/Data-Validation">Data Validation</a></li>
+<li><a href="programmer.html/Languages">Languages</a></li>
+<li><a href="programmer.html/Errors-Solutions">Errors Solutions</a></li>
+<li><a href="programmer.html/Commands">Commands</a></li>
+<li><a href="programmer.html/Packages">Packages / Projects</a></li>
+<li><a href="programmer.html/Config">Config</a></li>
+<li><a href="programmer.html/Processes">Processes</a></li>
+<li><a href="programmer.html/Server">Server</a></li>
+<li><a href="programmer.html/Cache">Cache</a></li>
+<li><a href="programmer.html/Environment">Environment</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
+</ul></li>
+<li>Development of Packages/Projects
+<ul>
+<li><a href="programmer.html/Debugging">Debugging</a></li>
+<li><a href="programmer.html/Testing">Testing</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="programmer.html/Links">Related Links</a></li>
+<li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
+<li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
+<li><a href="programmer.html/Powershell">Powershell</a></li>
+<li><a href="programmer.html/Donate">Donate</a></li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+     <div class="text-center py-3">© 2008-2021
+  <a href="https://nexss.com"> Nexss.com</a>
+</div>
+</footer>
+    <script src="assets/doc//js/init.js"></script>
+
+
+</div></body></html>

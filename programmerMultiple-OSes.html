@@ -1,0 +1,220 @@
+---
+title: ""
+permalink: /programmer.html/Multiple-OSes
+---
+<!DOCTYPE html><html lang="en"><!--[if lt IE 7 ]> 
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>    
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>    
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><head>
+  <base href="/">
+  <!-- TITLE OF SITE -->
+  <title>Multiple OSes - Nexss Programmer</title>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="linux,on,nexss,it,programmer,=">
+  <meta name="description" content="Multiple OSes - Nexss Programmer Documentation">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico">
+  <!-- BOOTSTRAP-->
+  <link href="assets/doc//css/bootstrap.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS-->
+  <link href="assets/doc//css/styles.css" rel="stylesheet">
+  <link href="assets/doc//css/theme_blue.css" rel="stylesheet">
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/doc//js/jquery-3.2.1.js"></script>
+  <script src="assets/doc//js/bootstrap.js"></script>
+
+  <!-- FONT AWESOME-->
+  <link href="assets/doc//css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+      // var y = document.querySelectorAll("pre code");
+      // for (var i = 0; i < y.length; i++) {
+      //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+      // }
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'PT Mono', monospace;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+
+    <div class="header">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-light navbar-toggleable-sm">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="navigation-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item menu__item">
+                    <a class="nav-link nav-link_mobile" href="/">Back to Nexss Home Page</a>
+                  </li>
+                  <li>
+                    <form><input autofocus="" name="search" id="search"><button>SEARCH</button></form>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1012px;margin:0 auto;">
+    <div class="float-right">
+            </div>
+    <div class="mt-4 markdown-content">
+        <h1>Multiple OSes</h1>
+        <hr>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
+                <h2>Implementation of the programming languages in Nexss Programmer</h2>
+<p><del>Nexss Programmer has now also installer for <strong>Linux</strong>. See: <a href="https://github.com/nexssp/cli/blob/master/install/installNexssProgrammer.sh">https://github.com/nexssp/cli/blob/master/install/installNexssProgrammer.sh</a></del></p>
+<pre><code class="language-sh">npm i @nexssp/cli -g # installs package globally</code></pre>
+<h3>Different linux distributions</h3>
+<p>From version 2.1.12+ you can now write configuration for separate distributions. For example below linux configuration handling 3 distributions for PHP (Oracle Linux, Ubuntu and Alpine):</p>
+<pre><code class="language-js">// If statement must be here for older versions nexss &lt;2.1.12
+if (require("fs").existsSync(`${process.env.NEXSS_SRC_PATH}/lib/osys.js`)) {
+  const dist = require(`${process.env.NEXSS_SRC_PATH}/lib/osys`).dist;
+  const distName = dist();
+  switch (distName) {
+    case "Oracle":
+    case "Oracle Linux Server":
+      languageConfig.compilers.php7.install = "microdnf install php";
+      languageConfig.languagePackageManagers.composer.installation =
+        "microdnf update &amp;&amp; microdnf install curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer";
+      break;
+    case "Alpine Linux":
+      languageConfig.compilers.php7.install = "apk add php php7-json";
+      languageConfig.languagePackageManagers.composer.installation =
+        "apk update &amp;&amp; apk install curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer";
+      break;
+  }
+
+  languageConfig.dist = distName;
+} else {
+  languageConfig.dist = "Ubuntu";
+}
+
+If there is no setup default will be Ubuntu if linux configuration is set.</code></pre>
+<p>Note: This is WIP version, however put more light on the subject.</p>
+<p>Here is the information about how to implement new languages or expand current config for other OSes.
+Please remember that if you are doing any changes to the languages configuration you need to recreate cache (once) by adding <code>--nocache</code> eg. <code>nexss myfile.go --nocache</code>. It will take a bit longer </p>
+<p>All configurations of the languages, compilers are installed on demand so for example if you run command <code>nexss myfile.go</code> and compiler of the go language is not there Nexss Programmer will install it for You.</p>
+<p>The configuration files for the languages are in the folder <code>c:/Users/YourUsername/.nexss/languages/</code>
+Those files are written in JavaScript, however they are straight forward as need only to put different values on variables. We haven't use pure JSON as with this way it is more flexible.</p>
+<p>So for example after you run the first program in <strong>go</strong> there will be added new language folder <strong>language_go.git</strong> in this case. Every folder contains:</p>
+<ul>
+<li>Folder <strong>templates/</strong> which of course contains templates for the language,
+more here: <a href="programmer.html/Files---Templates">Files---Templates</a></li>
+<li>File <strong>nexss.php.errors.js</strong> which contains error/solution definitions, more here:<a href="programmer.html/Errors-Solutions">Errors-Solutions</a> </li>
+<li>File <strong>php.win32.nexss.config.js</strong> definition of the Windows OS.</li>
+</ul>
+<p>Below can be defined but for now Nexss Programmer has defined only on Windows OS despite it's working also on <strong>WSL - Windows Subsystem Linux</strong></p>
+<ul>
+<li>File <strong>php.linux.nexss.config.js</strong> definition of the Linux OS.</li>
+<li>File <strong>php.darwin.nexss.config.js</strong> definition of the Mac OS.</li>
+</ul>
+<h2>Implement Linux and MacOS</h2>
+<p>Nexss Programmer is not prepared fully to work on Linux and MacOS however core code for Nexss Programmer is ready. You can implement it on your machine manually by configuring the Language files.</p>
+<h3>Prepare environment</h3>
+<p>Nexss Programmer uses <strong>Powershell</strong> to install some of the compilers. For now it will be like that until full implementation of Linux and/or MacOS is done. To Install Powershell on Linux:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/pl-pl/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7">Install Powershell On Linux</a></li>
+<li><a href="https://docs.microsoft.com/pl-pl/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7">Install Powershell on MacOS</a></li>
+</ul>
+<h3>Config files</h3>
+<p>These should be straight forward as it takes some of the configuration from the Windows configuration files. Eg:</p>
+<p>Change <strong>php.linux.nexss.config.js</strong> and/or <strong>php.darwin.nexss.config.js</strong> accordingly.</p>
+<pre><code class="language-js">//To add example later</code></pre>
+<p>Nexss will be run on <strong>all OSes</strong>, However for now there is only support for<strong> Windows OS</strong>.</p>
+<p>Please consider donating to speed up process.</p>
+<h2>Donate <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=RP72WY9S6CM4L&amp;source=url"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg" alt="Donate"></a></h2>
+<p>It is a great pleasure to work on the tools for everyone however it is a huge amount of work and the donations are always part of motivation which helps to move forward. There is still a lot of work to implement <strong>Nexss PROGRAMMER</strong> on the <strong>Linux</strong> and <strong>MacOS</strong>.</p>
+<p>Please consider donating to the Nexss Paypal Account</p>
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=RP72WY9S6CM4L&amp;source=url"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="paypal"></a> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=RP72WY9S6CM4L&amp;source=url"><img src="https://github.com/nexssp/cli/raw/master/nexss_kod_qr.png" alt="Donate"></a></p>
+
+            </div>
+            <div class="flex-shrink-0 col-12 col-md-3">
+                <ul>
+<li><a href="programmer.html/Home">Home</a></li>
+<li>Getting Started
+<ul>
+<li><a href="programmer.html/Concept-Overview">Overview</a></li>
+<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
+<li><a href="programmer.html/Nexss-Files">.nexss</a></li>
+<li><a href="programmer.html/Tutorials">Tutorials</a></li>
+<li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
+<li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
+</ul></li>
+<li>Nexss Programmer Parts
+<ul>
+<li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
+<li><a href="programmer.html/Sequences">Sequences</a></li>
+<li><a href="programmer.html/Projects">New Projects</a></li>
+<li><a href="programmer.html/Data-Validation">Data Validation</a></li>
+<li><a href="programmer.html/Languages">Languages</a></li>
+<li><a href="programmer.html/Errors-Solutions">Errors Solutions</a></li>
+<li><a href="programmer.html/Commands">Commands</a></li>
+<li><a href="programmer.html/Packages">Packages / Projects</a></li>
+<li><a href="programmer.html/Config">Config</a></li>
+<li><a href="programmer.html/Processes">Processes</a></li>
+<li><a href="programmer.html/Server">Server</a></li>
+<li><a href="programmer.html/Cache">Cache</a></li>
+<li><a href="programmer.html/Environment">Environment</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
+</ul></li>
+<li>Development of Packages/Projects
+<ul>
+<li><a href="programmer.html/Debugging">Debugging</a></li>
+<li><a href="programmer.html/Testing">Testing</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="programmer.html/Links">Related Links</a></li>
+<li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
+<li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
+<li><a href="programmer.html/Powershell">Powershell</a></li>
+<li><a href="programmer.html/Donate">Donate</a></li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+     <div class="text-center py-3">© 2008-2021
+  <a href="https://nexss.com"> Nexss.com</a>
+</div>
+</footer>
+    <script src="assets/doc//js/init.js"></script>
+
+
+</div></body></html>

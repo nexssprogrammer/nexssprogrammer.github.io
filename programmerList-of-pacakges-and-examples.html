@@ -1,0 +1,352 @@
+---
+title: ""
+permalink: /programmer.html/List-of-pacakges-and-examples
+---
+<!DOCTYPE html><html lang="en"><!--[if lt IE 7 ]> 
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>    
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>    
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><head>
+  <base href="/">
+  <!-- TITLE OF SITE -->
+  <title>List of pacakges and examples - Nexss Programmer</title>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="nexss,```,```sh,data,examples,clipboard">
+  <meta name="description" content="List of pacakges and examples - Nexss Programmer Documentation">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico">
+  <!-- BOOTSTRAP-->
+  <link href="assets/doc//css/bootstrap.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS-->
+  <link href="assets/doc//css/styles.css" rel="stylesheet">
+  <link href="assets/doc//css/theme_blue.css" rel="stylesheet">
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/doc//js/jquery-3.2.1.js"></script>
+  <script src="assets/doc//js/bootstrap.js"></script>
+
+  <!-- FONT AWESOME-->
+  <link href="assets/doc//css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+      // var y = document.querySelectorAll("pre code");
+      // for (var i = 0; i < y.length; i++) {
+      //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+      // }
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'PT Mono', monospace;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+
+    <div class="header">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-light navbar-toggleable-sm">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="navigation-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item menu__item">
+                    <a class="nav-link nav-link_mobile" href="/">Back to Nexss Home Page</a>
+                  </li>
+                  <li>
+                    <form><input autofocus="" name="search" id="search"><button>SEARCH</button></form>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1012px;margin:0 auto;">
+    <div class="float-right">
+            </div>
+    <div class="mt-4 markdown-content">
+        <h1>List of pacakges and examples</h1>
+        <hr>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
+                <p>To install all packages dependencies run <code>nexss pkg init</code>. It will run specified <code>init</code> command in the package/Nexss Programmer Project.</p>
+<h2>App</h2>
+<h3>App/Run</h3>
+<p>Languages used: <strong>Auto Hot Key (.ahk)</strong></p>
+<p>Runs application. For help run <code>nexss App help</code></p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss App/Run --app="code c:/myfolder" # Opens VSCode and opens folder c:/folder
+nexss App/Run --app="explorer" # Opens Explorer</code></pre>
+<h2>Blender</h2>
+<p>Video Quick Tutorial: <a href="https://youtu.be/1lT_chj4_2Y">Render in Blender from Nexss Programmer</a></p>
+<p>help: <code>nexss Blender help</code></p>
+<p>Render results/data from <strong>nexss PROGRAMMER</strong> directly in <strong>Blender</strong>. Just add <code>nexss pkg add Blender</code> to your Nexss Programmer Project and you are ready to go. More here in this video tutorial: <a href="https://youtu.be/1lT_chj4_2Y">Blender from Nexss Programmer Data</a></p>
+<h3>Parameters</h3>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>objectName - Name of object in the scene to modify</li>
+<li>renderData - String which contains data to render, otherwise it contains datetime stamp.</li>
+<li>renderFilename</li>
+<li>colorMode [‘BW’, ‘RGB’, ‘RGBA’]</li>
+<li>compression (0-100)</li>
+</ul>
+<p>This needs to specified compiler part (but when you use to copy and modify package for your needs --copyPackage it is already done there. You don't need to do it) eg:</p>
+<pre><code class="language-yml">files:
+  - name: src/yourScript.py
+    compiler: blender yourBlenderScene.blend --background</code></pre>
+<pre><code class="language-sh"># Below command will copy package to your current folder. (--copyPackage)
+nexss pkg add Blender --copyPackage --saveNexss --forceNexss
+# You can use it like: nexss Blender (the same as global package) but it will take local
+# Now you can adjust the copied code to your needs.
+</code></pre>
+<h2>Clipboard</h2>
+<p><code>nexss Clipboard</code>
+<code>nexss Clipboard help</code></p>
+<p>Languages used: <strong>NodeJS (.js)</strong> (+installed <a href="https://github.com/sindresorhus/clipboardy">https://github.com/sindresorhus/clipboardy</a>) OR Second example <strong>Auto Hot Key (.ahk)</strong></p>
+<pre><code class="language-sh">nexss Clipboard # displays clipboard data
+nexss Clipboard --write="This is cache long story"
+nexss Clipboard --fields="cwd"
+nexss Clipboard --fields="firstname,lastname"
+
+## TODO: Clipboard multiple: see below
+
+nexss Clipboard --push="Multiple Clipboard"
+nexss Clipboard --list # displays list with unique ids
+nexss Clipboard --delete uniqueId # removes item from Clipboards list
+</code></pre>
+<h2>Convert</h2>
+<h3>Convert/VideoToGif</h3>
+<p>Convert Video file to animated gif</p>
+<p>Languages used: <strong>Node JS (.js) and Python (.py)</strong></p>
+<p>Technologies used:<br>
+<strong>MoviePy</strong> <a href="https://zulko.github.io/moviepy/">https://zulko.github.io/moviepy/</a></p>
+<h2>Examples</h2>
+<pre><code class="language-sh">nexss Convert/VideoToGif --file=myfile.mp4
+nexss Convert/VideoToGif --file="Diving - 347.mp4" --fps=1</code></pre>
+<h2>Data</h2>
+<p>There are at least 2 ways of modifying data in Nexss Programmer.</p>
+<ul>
+<li>You can <strong>modify data in each program</strong> (any languag you like) by changing/modify files</li>
+<li>You can use this package <strong>Data</strong> which make operations on <em>Nexss Programmer data</em> which is default <strong>JSON</strong> passed between modules.</li>
+</ul>
+<h3>Data/Concat</h3>
+<p>Concatenate data in the sequence (You can also not use this module and make it manually in any language)</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Data/Concat --concatFields=cwd,debug # this will return string
+nexss Data/Concat --concatFields=cwd,debug --concatArray # this will return array in field concatResult
+nexss Data/Concat --concatFields=cwd,debug --concatArray --concatResultField=myFieldName # custom result fieldname 'myFieldName'
+nexss Data/Concat --concatFields=cwd,debug --concatSeparator=EOL # will produce everyvalue on new line</code></pre>
+<h3>Data / Delete</h3>
+<p>Deletes the fields from data flow.</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Data/Delete --deleteFields=cwd,myfield # make sure cwd and myfield do not exist.
+nexss Data/Delete --deleteFields=debug,_</code></pre>
+<h3>Data/Pretty</h3>
+<p>Show the data in nice way.</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Data/Show --showFields=cwd # Will only display cwd field as result (everything else is deleted.)
+nexss Data/Pretty --prettyFields=cwd,x --debug=0 # without --debug=0 will show error as x does not exist</code></pre>
+<h3>Data/Rename</h3>
+<p>Rename data from field to another. Very Handy incase parameters do not match.</p>
+<h4>Examples</h4>
+<pre><code class="language-sh"># rename cwd-&gt;y and myfield=&gt;result
+nexss Data/Rename --renameFrom=cwd,myfield --renameTo=y,result
+nexss Data/Rename --renameFrom=Y --renameTo=X</code></pre>
+<h3>Data/Show</h3>
+<p>Show the fields.</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Data/Show --showFields=cwd # Will only display cwd field as result (everything else is deleted.)</code></pre>
+<h3>Id</h3>
+<p>Generates unique id</p>
+<p>Languages: <strong>NodeJS (.js)</strong><br>
+Technologies: <a href="https://github.com/ericelliott/cuid">https://github.com/ericelliott/cuid</a></p>
+<h4>Example</h4>
+<pre><code class="language-sh">nexss Id
+nexss Id --fields=cuid # this will only display cuid</code></pre>
+<h3>Input</h3>
+<p>Languages: <strong>NodeJS (.js)</strong> and <strong>Python(.py)</strong><br>
+Technologies:</p>
+<ul>
+<li><a href="https://github.com/madmaze/pytesseract">https://github.com/madmaze/pytesseract</a></li>
+<li><a href="https://github.com/python-pillow/Pillow">https://github.com/python-pillow/Pillow</a></li>
+</ul>
+<p>Convert Image to Text.</p>
+<pre><code class="language-sh"># First we need to capture screen region and save it as 1.png
+
+nexss Screen/Capture --file=1.png # We capture the screenshot of mouse selection.
+nexss Input/OCR --file=1.png # Convert to text</code></pre>
+<h2>Keyboard</h2>
+<p>Handling keyboard</p>
+<p>Languages used: <strong>Auto Hot Key (.ahk)</strong></p>
+<h3>Examples</h3>
+<pre><code class="language-sh">nexss Keyboard --type="ls -la"  # writes ls -la
+nexss Keyboard --type="#s" # WIN + s
+nexss Keyboard --type="#d" # WIN + d / Show Desktop
+nexss Keyboard --type="#b" # WIN + b / Show Taskbar
+nexss Keyboard --type="color 03" --enter # hit enter after type</code></pre>
+<h4>Special Keys</h4>
+<p>Windows - Auto Hotkey: <a href="https://www.autohotkey.com/docs/KeyList.htm#keyboard">More Special Keys</a></p>
+<pre><code class="language-ahk">! = ALT
++ = SHIFT
+^ = CTRL
+# = WIN</code></pre>
+<h2>Mouse</h2>
+<h2>Mouse/Click</h2>
+<p>Click mouse button depends on configuration. See below examples.</p>
+<h2>Examples</h2>
+<pre><code class="language-sh">nexss Mouse/Click # Click left
+nexss Mouse/Click --double # Double click
+nexss Mouse/Click ==button=Right --double # Click Right double
+nexss Mouse/Click ==button=Middle # clic middle mouse button</code></pre>
+<h2>Mouse/Move</h2>
+<p>Moves mouse cursor to the position x,y.</p>
+<pre><code class="language-sh">nexss Mouse/Move --x=10 --y=200</code></pre>
+<h2>Mouse/MoveToImage</h2>
+<p>Moves mouse cursor to the image located on the screen.</p>
+<pre><code class="language-sh">nexss Mouse/MoveToImage --image=myfile.png</code></pre>
+<h2>Nexss</h2>
+<p>Package browser including searching and graph.</p>
+<p><img src="https://github.com/nexssp/cli/raw/master/wiki/packageBrowser_nexssPorgrammer20.png" alt="Package Browser for Nexss PROGRAMMER 2.0"></p>
+<h3>Examples</h3>
+<pre><code class="language-sh">nexss Nexss/PackageBrowser</code></pre>
+<h2>Output</h2>
+<h3>Output/Text - Nexss PROGRAMMER 2.0</h3>
+<p>Save data as a text</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Output/Text --file=myfilename.txt</code></pre>
+<h2>Screen</h2>
+<h3>AreaOCR</h3>
+<p><strong>NOTE: Example of Nexss Project without source inside! Just using another Nexss Packages</strong><br>
+link to the repository of : <a href="https://github.com/nexssp/package_screen/tree/master/AreaOCR">https://github.com/nexssp/package_screen/tree/master/AreaOCR</a></p>
+<p>Allows you to select region on screen and convert it to text (OCR).</p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Screen/AreaOCR</code></pre>
+<p>This is example of module which uses only Nexss PROGRAMMER pakcages without extra code.</p>
+<pre><code class="language-yml">files:
+  - name: Screen/Capture #--file=1.png Can be with or without params!
+  - name: Input/OCR #--file=1.png</code></pre>
+<h3>Screen/AreaVideo</h3>
+<p><a href="https://github.com/nexssp/package_screen/tree/master/AreaVideo">https://github.com/nexssp/package_screen/tree/master/AreaVideo</a></p>
+<p>Allows you to select region on screen and record video.</p>
+<h2>Example of Plugin without source inside!</h2>
+<p>This is example of module which uses only Nexss PROGRAMMER pakcages without extra code.</p>
+<pre><code class="language-yml">files:
+  - name: Select/Area
+  - name: Screen/VideoRecord</code></pre>
+<h3>Select/Area</h3>
+<p>Gives selection cross for select the area on desktop. Returns X1,Y1,X2,Y2</p>
+<h4>Credits</h4>
+<p>;~ This module is based on the script which has been found on AutoIt Forum
+;~ <a href="https://www.autoitscript.com/forum/topic/95920-solved-selecting-a-rectangle-to-screencapture/">https://www.autoitscript.com/forum/topic/95920-solved-selecting-a-rectangle-to-screencapture/</a></p>
+<h4>Examples</h4>
+<pre><code class="language-sh">nexss Select/Area # This will return X1,Y1,X2,Y2 of selected area</code></pre>
+<p>Example of returned value</p>
+<pre><code class="language-json">{"start":1579196911382,"cwd":"c:\\Users\\mapoart\\.nexss\\packages\\Mouse","debug":true,"_":[],"X1":787,"Y1":433,"X2":1318,"Y2":781}</code></pre>
+<h2>Web</h2>
+<h3>Web/Output</h3>
+<p>Different formats of saving Web.</p>
+<h2>Examples</h2>
+<pre><code class="language-sh">nexss Web/Output --website=https://nexss.com --file=myfile.pdf # Saves website to pdf
+nexss Web/Output --website=https://marcinpolak.eu --file=myfile.jpg # Saves website to jpg</code></pre>
+<h3>Web/Info</h3>
+<p><img src="assets/message-box.png?raw=true" alt="MessageBox" title="This message box appears through PowerShell and pass data to nodeJS!"></p>
+<p><img src="assets/console-table-display-example-nexss.png?raw=true" alt="MessageBox" title="This message box appears through PowerShell and pass data to nodeJS!"></p>
+<p>Nexss System allow to run systems in many languages at once. In this case:</p>
+<ul>
+<li>We use PowerShell script <code>getWebInfo.ps1</code> to get the data by the docker and great tool <code>wappalyzer/cli</code>.</li>
+<li>We parse the data by the nodeJS/JavaScript and display it as console.table just to show the docker output from .ps1 file to the NodeJS/JavaScript.</li>
+</ul>
+<h2>Packages and technologies used for this demo</h2>
+<ul>
+<li>Nexss automation</li>
+<li>NodeJS/JavaScript</li>
+<li>wappalyzer/cli</li>
+<li>ms.js</li>
+<li>PowerShell Scripting</li>
+<li>yml/yaml</li>
+</ul>
+
+            </div>
+            <div class="flex-shrink-0 col-12 col-md-3">
+                <ul>
+<li><a href="programmer.html/Home">Home</a></li>
+<li>Getting Started
+<ul>
+<li><a href="programmer.html/Concept-Overview">Overview</a></li>
+<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
+<li><a href="programmer.html/Nexss-Files">.nexss</a></li>
+<li><a href="programmer.html/Tutorials">Tutorials</a></li>
+<li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
+<li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
+</ul></li>
+<li>Nexss Programmer Parts
+<ul>
+<li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
+<li><a href="programmer.html/Sequences">Sequences</a></li>
+<li><a href="programmer.html/Projects">New Projects</a></li>
+<li><a href="programmer.html/Data-Validation">Data Validation</a></li>
+<li><a href="programmer.html/Languages">Languages</a></li>
+<li><a href="programmer.html/Errors-Solutions">Errors Solutions</a></li>
+<li><a href="programmer.html/Commands">Commands</a></li>
+<li><a href="programmer.html/Packages">Packages / Projects</a></li>
+<li><a href="programmer.html/Config">Config</a></li>
+<li><a href="programmer.html/Processes">Processes</a></li>
+<li><a href="programmer.html/Server">Server</a></li>
+<li><a href="programmer.html/Cache">Cache</a></li>
+<li><a href="programmer.html/Environment">Environment</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
+</ul></li>
+<li>Development of Packages/Projects
+<ul>
+<li><a href="programmer.html/Debugging">Debugging</a></li>
+<li><a href="programmer.html/Testing">Testing</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="programmer.html/Links">Related Links</a></li>
+<li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
+<li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
+<li><a href="programmer.html/Powershell">Powershell</a></li>
+<li><a href="programmer.html/Donate">Donate</a></li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+     <div class="text-center py-3">© 2008-2021
+  <a href="https://nexss.com"> Nexss.com</a>
+</div>
+</footer>
+    <script src="assets/doc//js/init.js"></script>
+
+
+</div></body></html>

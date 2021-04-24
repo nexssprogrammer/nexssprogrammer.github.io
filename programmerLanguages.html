@@ -1,0 +1,195 @@
+---
+title: ""
+permalink: /programmer.html/Languages
+---
+<!DOCTYPE html><html lang="en"><!--[if lt IE 7 ]> 
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>    
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>    
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><head>
+  <base href="/">
+  <!-- TITLE OF SITE -->
+  <title>Languages - Nexss Programmer</title>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="nexss,compiler,```,languages,install,language">
+  <meta name="description" content="Languages - Nexss Programmer Documentation">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico">
+  <!-- BOOTSTRAP-->
+  <link href="assets/doc//css/bootstrap.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS-->
+  <link href="assets/doc//css/styles.css" rel="stylesheet">
+  <link href="assets/doc//css/theme_blue.css" rel="stylesheet">
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/doc//js/jquery-3.2.1.js"></script>
+  <script src="assets/doc//js/bootstrap.js"></script>
+
+  <!-- FONT AWESOME-->
+  <link href="assets/doc//css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+      // var y = document.querySelectorAll("pre code");
+      // for (var i = 0; i < y.length; i++) {
+      //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+      // }
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'PT Mono', monospace;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+
+    <div class="header">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-light navbar-toggleable-sm">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="navigation-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item menu__item">
+                    <a class="nav-link nav-link_mobile" href="/">Back to Nexss Home Page</a>
+                  </li>
+                  <li>
+                    <form><input autofocus="" name="search" id="search"><button>SEARCH</button></form>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1012px;margin:0 auto;">
+    <div class="float-right">
+            </div>
+    <div class="mt-4 markdown-content">
+        <h1>Languages</h1>
+        <hr>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
+                <p>List of all available languages: <a href="programmer.html/Nexss-Programmer-Programming-Languages">Nexss Programmer's Programming Languages List</a></p>
+<p>Languages configuration are in the <strong>c:/Users/\&lt;yourusername&gt;/.nexss/languages/</strong><br>
+To see exact path for configuration for particular language write: <code>nexss php info</code> OR <code>nexss php config</code> (nexss [extension] info|config)</p>
+<p>They are downloaded on demand so if you add new file <code>nexss file add my.[extension]</code> and language is not installed it will download language implementation from Nexss Programmer Online Repository and display available templates.</p>
+<p>Templates for each language are located: <strong>c:/Users/\&lt;yourusername&gt;/.nexss/languages/\&lt;language&gt;/templates</strong>.</p>
+<p>Each template may need extra operations, files and this can be configured per template. More about <a href="programmer.html/Files---Templates#file-templates---languages-configuration">Templates Extra Configuration</a></p>
+<h2>Set default compiler, builder or package manager</h2>
+<pre><code class="language-sh">nexss lua default compiler # Shows the list of available compilers
+nexss lua default compiler lua54 # sets compiler to lua 5.3, 
+# note: you must pass correct compiler name.</code></pre>
+<h2>Set compiler per file</h2>
+<p>You can also specify custom compiler name per project eg.(selected blender compiler - see all compilers for python <code>nexss py compilers</code>)</p>
+<pre><code class="language-yml">files:
+  - name: src/nexssBlender.py
+    compiler: blender src/nexsstest.blend --background</code></pre>
+<p>Also the easier method is to add <code>nexss-compiler:</code> to your program (no need to add it to the config file), for example if you have only one file and you just want it to run</p>
+<p>eg. in python file add to the top of your page</p>
+<pre><code class="language-py"># nexss-compiler: blender -E CYCLES --background -noaudio
+# OR
+# nexss-compiler: python2
+# OR 
+# nexss-compiler: python39 
+# etc, etc</code></pre>
+<h2>Change compiler through command line</h2>
+<pre><code class="language-sh">nexss my.py --nxsCompiler="blender --background"</code></pre>
+<h2>Get info about language</h2>
+<pre><code class="language-sh">nexss py info --json # basic info
+nexss py info 
+nexss py config --json # full config
+nexss py config</code></pre>
+<h2>Update, Check status of installed languages</h2>
+<pre><code>nexss langauges status # will display the status of languages see below:</code></pre>
+<p><img src="https://user-images.githubusercontent.com/53263666/73291115-ddb03500-41ff-11ea-8dbb-018418bf869c.png" alt="image"></p>
+<h2>Installing Packages (languages related)</h2>
+<p>You don't need to know the language packagemanager to install for example json package. Just do <code>nexss php search json</code> and it will display all json related packages. And then to install <code>nexss php install [package name]</code></p>
+<pre><code class="language-sh">nexss js install nanomsg # if npm is not initialized it will automatically initialize the project
+nexss js # displays commands for package panager for in this case JavaScript
+nexss php install zeromq # for php will use composer
+nexss exs install elixir # for elixir uses hexpm/mix
+nexss pl install something # for perl using cpan and so on.. for other languages</code></pre>
+
+            </div>
+            <div class="flex-shrink-0 col-12 col-md-3">
+                <ul>
+<li><a href="programmer.html/Home">Home</a></li>
+<li>Getting Started
+<ul>
+<li><a href="programmer.html/Concept-Overview">Overview</a></li>
+<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
+<li><a href="programmer.html/Nexss-Files">.nexss</a></li>
+<li><a href="programmer.html/Tutorials">Tutorials</a></li>
+<li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
+<li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
+</ul></li>
+<li>Nexss Programmer Parts
+<ul>
+<li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
+<li><a href="programmer.html/Sequences">Sequences</a></li>
+<li><a href="programmer.html/Projects">New Projects</a></li>
+<li><a href="programmer.html/Data-Validation">Data Validation</a></li>
+<li><a href="programmer.html/Languages">Languages</a></li>
+<li><a href="programmer.html/Errors-Solutions">Errors Solutions</a></li>
+<li><a href="programmer.html/Commands">Commands</a></li>
+<li><a href="programmer.html/Packages">Packages / Projects</a></li>
+<li><a href="programmer.html/Config">Config</a></li>
+<li><a href="programmer.html/Processes">Processes</a></li>
+<li><a href="programmer.html/Server">Server</a></li>
+<li><a href="programmer.html/Cache">Cache</a></li>
+<li><a href="programmer.html/Environment">Environment</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
+</ul></li>
+<li>Development of Packages/Projects
+<ul>
+<li><a href="programmer.html/Debugging">Debugging</a></li>
+<li><a href="programmer.html/Testing">Testing</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="programmer.html/Links">Related Links</a></li>
+<li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
+<li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
+<li><a href="programmer.html/Powershell">Powershell</a></li>
+<li><a href="programmer.html/Donate">Donate</a></li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+     <div class="text-center py-3">© 2008-2021
+  <a href="https://nexss.com"> Nexss.com</a>
+</div>
+</footer>
+    <script src="assets/doc//js/init.js"></script>
+
+
+</div></body></html>

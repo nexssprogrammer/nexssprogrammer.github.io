@@ -1,0 +1,223 @@
+---
+title: ""
+permalink: /programmer.html/Errors-Solutions
+---
+<!DOCTYPE html><html lang="en"><!--[if lt IE 7 ]> 
+   <html lang="en" class="innerpage no-js ie6">
+      <![endif]--><!--[if IE 7 ]>    
+      <html lang="en" class="innerpage no-js ie7">
+         <![endif]--><!--[if IE 8 ]>    
+         <html lang="en" class="innerpage no-js ie8">
+            <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><head>
+  <base href="/">
+  <!-- TITLE OF SITE -->
+  <title>Errors Solutions - Nexss Programmer</title>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="keywords" content="example,string,error,file,install,errors">
+  <meta name="description" content="Errors Solutions - Nexss Programmer Documentation">
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico">
+  <!-- BOOTSTRAP-->
+  <link href="assets/doc//css/bootstrap.min.css" rel="stylesheet">
+  <!-- CUSTOM CSS-->
+  <link href="assets/doc//css/styles.css" rel="stylesheet">
+  <link href="assets/doc//css/theme_blue.css" rel="stylesheet">
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <script src="assets/doc//js/jquery-3.2.1.js"></script>
+  <script src="assets/doc//js/bootstrap.js"></script>
+
+  <!-- FONT AWESOME-->
+  <link href="assets/doc//css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+      // var y = document.querySelectorAll("pre code");
+      // for (var i = 0; i < y.length; i++) {
+      //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+      // }
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'PT Mono', monospace;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=PT+Mono&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MAIN WRAPPER -->
+  <div class="wrapper">
+
+    <div class="header">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="navbar navbar-light navbar-toggleable-sm">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="navigation-menu">
+                <ul class="navbar-nav">
+                  <li class="nav-item menu__item">
+                    <a class="nav-link nav-link_mobile" href="/">Back to Nexss Home Page</a>
+                  </li>
+                  <li>
+                    <form><input autofocus="" name="search" id="search"><button>SEARCH</button></form>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1012px;margin:0 auto;">
+    <div class="float-right">
+            </div>
+    <div class="mt-4 markdown-content">
+        <h1>Errors Solutions</h1>
+        <hr>
+        <div class="d-flex flex-column flex-md-row">
+            <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
+                <p>Nexss PROGRAMMER also shows <code>possible solutions</code> to the issue you may come up during development. You can also configure your own errors solutions definitions (regexp or string) in the <strong>_nexss.yml</strong> config file eg:</p>
+<h3>Syntax</h3>
+<ul>
+<li><strong>String</strong> - any string to be matched - {"pattern":"solution"}</li>
+<li><strong>Capturing Group</strong> - string + one (*.?) - when found \&lt;found1&gt; will be replaced.</li>
+<li><strong>Named Groups</strong> - (?\&lt;found1&gt;.*?) some string (?\&lt;found2&gt;.*?) - more info about named groups <a href="https://javascript.info/regexp-groups#named-groups">here</a>, or example of config: <a href="https://github.com/nexssp/language_java/blob/master/nexss.java.errors.js">Java Errors Solutions Example</a></li>
+<li>
+<p><strong>Function</strong> - you can write own functions for error solutions (like automatic fixes etc.). Function can take 4 parameters: solution(<strong>errorBody</strong>, <strong>filename</strong>, <strong>arrayMatch</strong>, <strong>langConfig</strong>)</p>
+<ul>
+<li>errorBody - is the error returned by the compiler</li>
+<li>filename - is the filename of the file coused the error</li>
+<li>arrayMatch - is the capturing group information</li>
+<li>langConfig - is the whole language configuration as object</li>
+</ul>
+</li>
+</ul>
+<h4>Example of 3 different error solutions possible as above</h4>
+<pre><code class="language-js">module.exports = {
+  "ModuleNotFoundError:":
+    "nexss py install &lt;module here&gt; OR pip3 install &lt;module here&gt;",
+  "ModuleNotFoundError: No module named '(.*?)'":
+    "nexss py install &lt;module&gt; OR pip3 install &lt;module&gt;",
+  "ModuleNotFoundError: No module named '(?&lt;found1&gt;.*?)'":
+    "nexss py install &lt;found1&gt; OR pip3 install &lt;found1&gt;",
+  'invalid command name "(?&lt;command&gt;.*?)".*\\(file "(?&lt;file&gt;.*?)" line (?&lt;line&gt;.*?)\\)':
+    "Check the word/command '&lt;command&gt;' line: &lt;line&gt; in the file: &lt;file&gt;",
+  'invalid command name "(?&lt;found1&gt;.*?)"': function(
+    errorBody,
+    filename,
+    arrayMatch,
+    languageConfig
+  ) {
+    console.log(
+      "Example of function as error solution",
+      errorBody,
+      filename,
+      arrayMatch,
+      languageConfig
+    );
+  }
+};</code></pre>
+<p><strong>"error (.*?)":"solution text <found1>"</found1></strong> or if you will not include (.*?) then <found1> won't be replaced.</found1></p>
+<p>Example String: "mystring to match" : "this is the solution"</p>
+<p>Example Capturing Group: "xyz '(.*?)' abc" - this will find eg "xyz '<strong>myerror</strong>' abc" - the \&lt;found1&gt; will have value <strong>myerror</strong></p>
+<p>Example Named Group: "symbol: class (?\&lt;<strong>anyname</strong>&gt;.*?)\r\n": "Check the '\&lt;<strong>anyname</strong>&gt;' word.."</p>
+<h3>Language Config Example</h3>
+<p>Each programming language in the Nexss Programmer has own file with errors definition eg for Java: C:/Users/mapoart/.nexss/languages/language_java.git/<strong>nexss.java.errors.js</strong> and looks like below:</p>
+<pre><code class="language-js">module.exports = {
+  "symbol:   class (?&lt;found1&gt;.*?)\\r\\n": "Check the '&lt;found1&gt;' word..",
+  "Could not find or load main class (.*?)":
+    "Please make sure class name is the same as filename and starts with uppercase letter.",
+  "variable inline might not have been initialized": `Variable is declared but not initialized. eg. string x; but must be string x=""`,
+  "Caused by: java.lang.ClassNotFoundException:(.*?)": `Nexss Programmer has CLASSPATH specifiend to the ./lib folder. Please go to https://github.com/nexssp/language_java for more details.`,
+  "has been compiled by a more recent version of the Java Runtime \\(class file version (?&lt;found1&gt;.*?)\\), this version of the Java Runtime only recognizes class file versions up to (?&lt;found2&gt;.*?)\r\n":
+    "Java Compiler (javac) &lt;found1&gt; is different then your Java Runtime (java) &lt;found2&gt;. For more details please go to: https://github.com/nexssp/language_java/wiki/java.lang.UnsupportedClassVersionError-issue"
+};</code></pre>
+<h3>Custom for each project</h3>
+<p>You can add or ovewrite already defined errors in the _nexss.yml like example below. Below will overwrite the same error solution as defined on the language so you can have possibility to display different error solutions per projects/packages.</p>
+<pre><code class="language-yml">errors:
+  "address already in use :::(.*?)\r\n": "Find process and kill it by: nexss ps find port &lt;found1&gt; &amp;&amp; nexss ps stop &lt;founded pid&gt;"</code></pre>
+<h2>Replacer</h2>
+<p>You can add replacer which will replace strings, for example if you define error and in capture group you have package function and you want to install package, you can provide package name not function.</p>
+<pre><code class="language-js">languageConfig.replacer = __dirname + "/nexss.haskell.replacer.js"; // replace strings in errors solutions</code></pre>
+<p>and file looks like:</p>
+<p>so in this example if in solution 'Data.Aeson' will appear it will be replaced by 'aeson'. Example is from Haskell Lanugage.</p>
+<pre><code class="language-js">module.exports = {
+  "Data.Aeson": "aeson"
+};</code></pre>
+
+            </div>
+            <div class="flex-shrink-0 col-12 col-md-3">
+                <ul>
+<li><a href="programmer.html/Home">Home</a></li>
+<li>Getting Started
+<ul>
+<li><a href="programmer.html/Concept-Overview">Overview</a></li>
+<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
+<li><a href="programmer.html/Nexss-Files">.nexss</a></li>
+<li><a href="programmer.html/Tutorials">Tutorials</a></li>
+<li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
+<li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
+</ul></li>
+<li>Nexss Programmer Parts
+<ul>
+<li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
+<li><a href="programmer.html/Sequences">Sequences</a></li>
+<li><a href="programmer.html/Projects">New Projects</a></li>
+<li><a href="programmer.html/Data-Validation">Data Validation</a></li>
+<li><a href="programmer.html/Languages">Languages</a></li>
+<li><a href="programmer.html/Errors-Solutions">Errors Solutions</a></li>
+<li><a href="programmer.html/Commands">Commands</a></li>
+<li><a href="programmer.html/Packages">Packages / Projects</a></li>
+<li><a href="programmer.html/Config">Config</a></li>
+<li><a href="programmer.html/Processes">Processes</a></li>
+<li><a href="programmer.html/Server">Server</a></li>
+<li><a href="programmer.html/Cache">Cache</a></li>
+<li><a href="programmer.html/Environment">Environment</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
+<li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
+</ul></li>
+<li>Development of Packages/Projects
+<ul>
+<li><a href="programmer.html/Debugging">Debugging</a></li>
+<li><a href="programmer.html/Testing">Testing</a></li>
+</ul></li>
+<li>Other
+<ul>
+<li><a href="programmer.html/Links">Related Links</a></li>
+<li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
+<li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
+<li><a href="programmer.html/Powershell">Powershell</a></li>
+<li><a href="programmer.html/Donate">Donate</a></li>
+</ul></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+     <div class="text-center py-3">© 2008-2021
+  <a href="https://nexss.com"> Nexss.com</a>
+</div>
+</footer>
+    <script src="assets/doc//js/init.js"></script>
+
+
+</div></body></html>
