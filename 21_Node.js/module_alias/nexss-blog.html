@@ -1,6 +1,6 @@
 ---
 title: ""
-permalink: /nexss-blog.html
+permalink: /21_Node.js/module_alias/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="en"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,7 +13,7 @@ permalink: /nexss-blog.html
 </script>
 
   <title>
-    BLOG Welcome - News
+    BLOG Node.js - Module_alias - alias
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -21,9 +21,9 @@ permalink: /nexss-blog.html
   <meta name="distribution" content="Global">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="News - Nexss Programmer Blog">
+  <meta name="description" content="Module_alias - Nexss Programmer Blog">
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Welcome - News">
+  <meta property="og:description" content="BLOG Node.js - Module_alias - alias">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -176,19 +176,28 @@ permalink: /nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h2>News</h2>
-<h3>April 25th, 2021</h3>
-<p>Nexss Programmer new version <b>2.2.40</b><br>
-NEW FUNCTIONALITIES ADDED: </p><ul><li><b>nexss run</b></li><li><b>nexss cache rebuild</b></li><li><b>big efficiency improvement</b></li></ul><p></p>
+        <h1>Module Alias</h1>
 <ul>
-<li><a href="https://github.com/nexssp/cli/releases/tag/2.2.40">more</a>
-<h3>March 29th, 2021</h3></li>
+<li>package: <strong>module-alias</strong> - <a href="https://github.com/ilearnio/module-alias">https://github.com/ilearnio/module-alias</a></li>
 </ul>
-<p>Nexss Programmer new version <b>2.2.24</b><br>
-NEW LANGUAGE ADDED: <b>LiveScript</b></p>
-<ul>
-<li><a href="https://github.com/nexssp/cli/releases/tag/2.2.24">more</a></li>
-</ul>
+<p>Great package to cleanup/organize the includes/imports. Also is very handy to develop custom packages. Please see below. We are using the <strong>../nexsspackages</strong> folder to keep our modules outside the folder and not installing them all the time.</p>
+<pre><code class="language-sh">npm i module-alias</code></pre>
+<p>In the package.json setup aliases:</p>
+<pre><code class="language-json">// package.json
+{
+  "name": "mypackage",
+  //...
+  "_moduleAliases": {
+    "@root": ".",
+    "@nexssp": "../nexsspackages"
+  }
+}</code></pre>
+<p>In the program</p>
+<pre><code class="language-js">require("module-alias/register");
+const os = require("@nexssp/os"); // in the ../nexsspackages folder we have git repos of our modules</code></pre>
+<p>or through program</p>
+<pre><code class="language-js">const moduleAlias = require("module-alias");
+moduleAlias.addAlias("@nexssp", __dirname + "../nexsspackages");</code></pre>
       </div>
     </div>
   </div>
