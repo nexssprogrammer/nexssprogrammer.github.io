@@ -1,6 +1,6 @@
 ---
 title: ""
-permalink: /en/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
+permalink: /en/11_blog-nexss-programmer/tutorials/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="en"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,7 +13,7 @@ permalink: /en/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
 </script>
 
   <title>
-    BLOG Blender 3D - Nexss Programmer Nodes - exss-programmer-nodes
+    BLOG Nexss Programmer - Tutorials - utorials
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -21,9 +21,9 @@ permalink: /en/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
   <meta name="distribution" content="Global">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="Nexss Programmer Nodes - Nexss Programmer Blog">
+  <meta name="description" content="Tutorials - Nexss Programmer Blog">
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Blender 3D - Nexss Programmer Nodes - exss-programmer-nodes">
+  <meta property="og:description" content="BLOG Nexss Programmer - Tutorials - utorials">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -172,8 +172,41 @@ permalink: /en/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h2>Nexss Programmer Blender Nodes</h2>
-<p>We are developing <strong>Blender</strong>'s <strong>Nexss Programmer</strong> nodes so you will be able to use all programming languages in the Blender as well all functionality of the <strong>Nexss Programmer</strong>.</p>
+        <h2>Nexss Programmer Tutorials</h2>
+<h2>List of Tutorials</h2>
+<ul>
+<li><a href="/en/11_blog-nexss-programmer/tutorials/nexss-blog.html#howtousenexssprogrammerwithgooglecolabnotebook">How to use Nexss Programmer with Google Colab NoteBook</a></li>
+<li><a href="/en/11_blog-nexss-programmer/tutorials/nexss-blog.html#uploadfileyourprogramtogooglecolab">Upload your programs to Google Colab NoteBook</a></li>
+</ul>
+<p><a name="howtousenexssprogrammerwithgooglecolabnotebook"></a></p>
+<h3>How to use Nexss Programmer with Google Colab NoteBook</h3>
+<p>Go to the <a href="https://colab.research.google.com/">Colab</a> and create new NoteBook.</p>
+<p>Execute the commands:</p>
+<pre><code>!npm i -g @nexssp/cli # install Nexss Programmer
+!nexss php run "print('x');"
+!nexss py run "print('x')"
+!nexss py run "import time; print(time.time())"
+!nexss myprogram.py
+!nexss myprogram.r</code></pre>
+<p><br></p>
+<p><a name="uploadfileyourprogramtogooglecolab"></a></p>
+<h3>Upload file/your program to Google Colab</h3>
+<p>Upload custom files to the <a href="https://colab.research.google.com/">Colab</a>.<br>
+To run your program, you need to upload files to your drive. You can do it in several ways.</p>
+<h4>1. From Colab using Python short script</h4>
+<p>Below code will show you the standard file input to select file and upload. The files will be stored in the <strong>uploadedFileNames</strong> variable. To see them use print(uploadedFileNames)</p>
+<pre><code class="language-py">from google.colab import files
+uploadedFileNames = files.upload()</code></pre>
+<h4>2. From Colab using Google Drive</h4>
+<p>First go to the <a href="https://drive.google.com/">Google Drive</a>.</p>
+<pre><code class="language-py">from google.colab import drive
+drive.mount('/mygoogledrive') # you can use here any mounting point/name</code></pre>
+<p>Now you will see the message to authorize your google drive with the colab. Click on the link. After authorisation you will be able to copy the created token. Click the copy button and paste it to the earlier input box created in the Colab Notebook.</p>
+<p>I have created folder <strong>ColabDrive</strong> in my google drive. (My drive is necessary. To see it run command: <strong>!ls /mygoogledrive</strong>)</p>
+<pre><code class="language-py"># Run program in Google Colab from any programming language with Nexss Programmer
+# You can also pass absolute path.
+!nexss '/mygoogledrive/MyDrive/ColabDrive/helloWorld.cr'</code></pre>
+<p>We can mount google drive and use files from there for example:</p>
       </div>
     </div>
   </div>

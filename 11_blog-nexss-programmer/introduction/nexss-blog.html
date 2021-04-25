@@ -131,7 +131,20 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
       <div class="header__bottom">
     </div>
     </header>
-                <div class="block" id="nexssPage">
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // below was: pre code -> code
+        document.querySelectorAll('code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+        // var y = document.querySelectorAll("pre code");
+        // for (var i = 0; i < y.length; i++) {
+        //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+        // }
+    });
+</script><div class="block" id="nexssPage">
   <div class="center">
     <div class="block__title">
       <span>Nexss Programmer </span>
@@ -146,6 +159,7 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
                 <b>Nexss Programmer</b>
         <ul>
                     <li><a href="11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction</a></li>
+                    <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials</a></li>
                   </ul>
                 <b>Blender 3D</b>
         <ul>
@@ -159,9 +173,12 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
               </div>
       <div class="column2">
         <h2>Introduction</h2>
-<p>Welcome to the Nexss Programmer Blog. Here you will find more information about how to use the <code>Nexss Programmer</code>.</p>
-<p>We will be adding here tutorials, practical examples and much more.</p>
+<p>Welcome to the Nexss Programmer Blog. Here you will find more information about how to use the <strong>Nexss Programmer</strong>.</p>
+<hr>
+<p><strong>Nexss Programmer</strong> is for people who are starting their career in programming, but also for the professionals. You can also learn about older programming languages that are not so popular anymore. Nexss has many tools and a lot of functionalities to help you gather as much knowledge as possible to become better programmer. It also allow to compose many languages and has a lot of innovative functionality.</p>
 <p>Now <a href="nexss-programming-languages.html">51 programming languages</a> are implemented in the <strong>Free/Open Source</strong> Nexss Programmer.</p>
+<hr>
+<p>We will be adding here tutorials, practical examples and much more.</p>
       </div>
     </div>
   </div>

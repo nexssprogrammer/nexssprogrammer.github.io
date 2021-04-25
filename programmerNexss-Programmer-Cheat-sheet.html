@@ -91,12 +91,18 @@ permalink: /programmer.html/Nexss-Programmer-Cheat-sheet
         <hr>
         <div class="d-flex flex-column flex-md-row">
             <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
-                <h2>Install</h2>
+                <h2>Start</h2>
 <pre><code class="language-sh">nexss program.r
 nexss program.[any extension]
 npx nexss program.r # without installing nexss
-nexss file add my.rs --edit # Will open list of templates for particular language, install editor (if not exists) and open file for editing. </code></pre>
-<h2>Run different Nexss Progremmer envs (different languages/packages/defaults etc)</h2>
+nexss file add my.rs --edit # Will open list of templates for particular language, install editor (if not exists) and open file for editing. 
+
+nexss php run "print('x');" # 2.2.37+
+nexss py run "print('x')"  # 2.2.37+</code></pre>
+<h2>Cache</h2>
+<p>Nexss Programmer keep cache from the language configurations for efficiency. Use <code>nexss cache rebuild</code> (2.2.38+) to rebuild cache.</p>
+<pre><code class="language-sh">nexss cache rebuild # 2.2.38+</code></pre>
+<h2>Run different Nexss Programmer envs (different languages/packages/defaults etc)</h2>
 <p>Nexss Programmer has special env variable which can be changed to work with different environment, cache etc.</p>
 <h3>Powershell</h3>
 <pre><code class="language-ps1">$env:NEXSS_HOME_PATH = "C:/Users/mapoart/.nexssSomethingElse/"
