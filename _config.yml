@@ -35,8 +35,12 @@ theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-seo-tag
 whitelist:
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-seo-tag
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

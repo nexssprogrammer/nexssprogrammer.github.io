@@ -1,5 +1,7 @@
 ---
-title: ""
+title: "<title>
+    BLOG Nexss Programmer - Tutorials
+  </title>"
 permalink: /11_blog-nexss-programmer/tutorials/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="en"><head>
@@ -13,17 +15,15 @@ permalink: /11_blog-nexss-programmer/tutorials/nexss-blog.html
 </script>
 
   <title>
-    BLOG Nexss Programmer - Tutorials - utorials
+    BLOG Nexss Programmer - Tutorials
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="robots" content="index,follow">
-  <meta name="distribution" content="Global">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
   <meta name="description" content="Tutorials - Nexss Programmer Blog">
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Nexss Programmer - Tutorials - utorials">
+  <meta property="og:description" content="BLOG Nexss Programmer - Tutorials">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -37,9 +37,7 @@ permalink: /11_blog-nexss-programmer/tutorials/nexss-blog.html
 <script src="assets/default/js/myscript.js"></script>
 <script src="assets/default/js/owl.carousel.min.js"></script>
 <script src="assets/default/js/wow.min.js"></script>   <meta name="google-site-verification" content="">
-    <meta name="revisit-after" content="7 days">
-  <meta name="creator" content="Nexss.com">
-</head>
+  </head>
 
 <body>
   <div class="wrap">
@@ -197,12 +195,27 @@ permalink: /11_blog-nexss-programmer/tutorials/nexss-blog.html
 <h3>Upload file/your program to Google Colab</h3>
 <p>Upload custom files to the <a href="https://colab.research.google.com/">Colab</a>.<br>
 To run your program, you need to upload files to your drive. You can do it in several ways.</p>
-<h4>1. From Colab using Python short script</h4>
+<h4>1. Using Nexss Programmer Download Package</h4>
+<p>Create new Colab Notebook and run:</p>
+<pre><code class="language-py">!npm i -g @nexssp/cli
+
+# to download program
+!nexss Download https://raw.githubusercontent.com/nexssp/language_clojure/master/templates/helloWorld.clj --nxsField
+
+# to display program just do:
+!nexss https://raw.githubusercontent.com/nexssp/language_clojure/master/templates/helloWorld.clj --nxsField
+
+#Note: --nxsField is the same as --nxsField=nxsOut
+# which means display only value from field nxsOut.
+# !nexss Download -&gt; nxsOut will contain filepath for downloaded file
+# !nexss [url] -&gt; nxsOut will contain content of that file, in this case program.
+</code></pre>
+<h4>2. From Colab using Python short script</h4>
 <p>Below code will show you the standard file input to select file and upload. The files will be stored in the <strong>uploadedFileNames</strong> variable. To see them use print(uploadedFileNames)</p>
 <pre><code class="language-py">from google.colab import files
 uploadedFileNames = files.upload()</code></pre>
-<h4>2. From Colab using Google Drive</h4>
-<p>First go to the <a href="https://drive.google.com/">Google Drive</a>.</p>
+<h4>3. From Colab using Google Drive</h4>
+<p>First go to the <a href="https://drive.google.com/">Google Drive</a> and upload file there..</p>
 <pre><code class="language-py">from google.colab import drive
 drive.mount('/mygoogledrive') # you can use here any mounting point/name</code></pre>
 <p>Now you will see the message to authorize your google drive with the colab. Click on the link. After authorisation you will be able to copy the created token. Click the copy button and paste it to the earlier input box created in the Colab Notebook.</p>
@@ -246,8 +259,10 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 </div>
     
         <!-- footer -->
-    <footer class="footer">
-       <div class="footer__top">
+    <div class="push"></div>
+  </div>
+  <footer class="footer">
+     <div class="footer__top">
   <div class="container">
         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
       <ul class="footer__menu tl mb-space">
@@ -292,8 +307,7 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
   $('#ext1, #ext2, #ext3').attr('href', 'm' + 'ai' + 'lto' + ':map' + 'oart' + String.fromCharCode(64) + 'g' + 'mai' + 'l.c' + 'om');
   $('#ext1, #ext2, #ext3').html('<i class="fa fa-envelope"></i> mapo' + 'art' + String.fromCharCode(64) + 'gma' + 'il' + '.' + 'com');
 </script>
-    </footer>
-  </div>
+  </footer>
 
 
 </body></html>
