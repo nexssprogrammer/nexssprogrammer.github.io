@@ -155,8 +155,24 @@ nexss Data/Concat --concatFields="cwd,debug"
 # eg:
 nexss Id --x=myfolder --myenv='${process.env.NEXSS_APPS_PATH}\\${x}'
 nexss id --x=1000 --y=2 --sum='${x+y}' --pow='${x**y}'# ${} must be surrounded only by ' not " !!
+
 # from 2.1
-nexss Id --arch='${process.arch===\"x64\"?64:32}'</code></pre>
+nexss Id --arch='${process.arch===\"x64\"?64:32}'
+
+# $# is special parameter which basically do nothing. you can however set variables etc.
+nexss $# --x.x='test'
+# {"x":{"x":"test"},"nexss":"2.3.7"}
+
+nexss $# --x*x=test --x:x=test -x[x]=test
+
+# ,  needs to be surrounded by " (see below) as on windows has different look
+# below works on Linux and Win
+nexss $# --'x,x'=test
+# Result different on Linux and Windows
+nexss $# --x,x=test
+# Linux {"x,x":"test","nexss":"2.3.7"}
+# Windows {"x x":"test","nexss":"2.3.7"}
+</code></pre>
 <h2>Global</h2>
 <pre><code class="language-sh">nexss --version # eg. 2.0.6
 nexss myprogram.js --nxsFields="cwd,debug" # will display only cwd and debug data fields (" is required)

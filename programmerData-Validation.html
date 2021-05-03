@@ -16,7 +16,7 @@ permalink: /programmer.html/Data-Validation
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta name="keywords" content="validate,name,data,required,type,module">
+  <meta name="keywords" content="validate,name,required,type,data,<field>">
   <meta name="description" content="Data Validation - Nexss Programmer Documentation">
   <!-- FAVICON -->
   <link rel="icon" href="favicon.ico">
@@ -92,7 +92,7 @@ permalink: /programmer.html/Data-Validation
         <div class="d-flex flex-column flex-md-row">
             <div class="flex-shrink-0 col-12 col-md-9 mb-5 mb-md-0">
                 <p>Nexss Programmer passing data between programs and modules/packages in JSON format. Each module can receive and send messages to another one. You can validate data by setup project and use config file as below.</p>
-<p>See available validation possibilities by command <code>nexss --dev-validation</code>. <strong>works only from 2.1.1+</strong></p>
+<p>See available validation possibilities by command <code>nexss -dev-validation</code>. <strong>works only from 2.1.1+</strong></p>
 <p>Below example <em>will validate</em> module that needs to have 2 <strong>required</strong> fields:</p>
 <p>-<strong>input</strong>: called 'file'<br>
 -<strong>output</strong>: called 'file'  </p>
@@ -102,9 +102,14 @@ input:
   - name: _imap_username
     validate:
       - type: required
+        message: You need to pass &lt;Field&gt; parameter for safety reason. # &lt;Field&gt; will be replaced by fieldname
   - name: _imap_password
     validate:
       - type: required
+  - name: "myparam:_ok" # you can use prefixes
+    validate:
+      - type: required
+        message: You need to pass &lt;Field&gt; parameter for safety reason.
 output:
   - name: emailTotal
     validate:

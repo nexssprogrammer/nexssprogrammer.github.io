@@ -16,7 +16,7 @@ permalink: /programmer.html/Multiple-OSes
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta name="keywords" content="linux,on,nexss,it,programmer,=">
+  <meta name="keywords" content="y,install,=,on,case,&amp;&amp;">
   <meta name="description" content="Multiple OSes - Nexss Programmer Documentation">
   <!-- FAVICON -->
   <link rel="icon" href="favicon.ico">
@@ -95,34 +95,49 @@ permalink: /programmer.html/Multiple-OSes
 <p><del>Nexss Programmer has now also installer for <strong>Linux</strong>. See: <a href="https://github.com/nexssp/cli/blob/master/install/installNexssProgrammer.sh">https://github.com/nexssp/cli/blob/master/install/installNexssProgrammer.sh</a></del></p>
 <pre><code class="language-sh">npm i @nexssp/cli -g # installs package globally</code></pre>
 <h3>Different linux distributions</h3>
-<p>From version 2.1.12+ you can now write configuration for separate distributions. For example below linux configuration handling 3 distributions for PHP (Oracle Linux, Ubuntu and Alpine):</p>
-<pre><code class="language-js">// If statement must be here for older versions nexss &lt;2.1.12
-if (require("fs").existsSync(`${process.env.NEXSS_SRC_PATH}/lib/osys.js`)) {
-  const dist = require(`${process.env.NEXSS_SRC_PATH}/lib/osys`).dist;
-  const distName = dist();
-  switch (distName) {
-    case "Oracle":
-    case "Oracle Linux Server":
-      languageConfig.compilers.php7.install = "microdnf install php";
-      languageConfig.languagePackageManagers.composer.installation =
-        "microdnf update &amp;&amp; microdnf install curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer";
-      break;
-    case "Alpine Linux":
-      languageConfig.compilers.php7.install = "apk add php php7-json";
-      languageConfig.languagePackageManagers.composer.installation =
-        "apk update &amp;&amp; apk install curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer";
-      break;
-  }
+<p>Please see below for example how multiple distributions are handled in the linux configuration. The configuration are generated and saved in to the cache. (<strong>SUDO </strong>- is also stored in cache as cache is per user. So root has own cache folder in the home directory.)</p>
+<pre><code class="language-js">const distName = process.distro;
+// TODO: Later to cleanup this config file !!
+switch (distName) {
+  case process.distros.ORACLE:
+    //if here for older versions of nexssp
+    const distVersion = process.distroVersion * 1; // *1 converts to number
+    if (distVersion &gt;= 8) {
+      // TODO: recognize the slim version
+      compilerConfig.install = `${sudo}dnf update -y &amp;&amp; ${sudo}dnf install -y oracle-epel-release* &amp;&amp; ${sudo}dnf install -y php php-json php-pdo php-intl`;
+      languageConfig.languagePackageManagers.composer.installation = `${sudo}dnf update -y &amp;&amp; ${sudo}dnf install -y curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer`;
+    } else {
+      compilerConfig.install = `${sudo}yum update -y &amp;&amp; ${sudo}yum install -y oracle-epel-release* &amp;&amp; ${sudo}yum install -y php php-json php-imap php-pdo php-intl`;
+      languageConfig.languagePackageManagers.composer.installation = `${sudo}yum update -y &amp;&amp; ${sudo}yum install -y curl &amp;&amp; curl -s https://getcomposer.org/installer | php &amp;&amp; mv composer.phar /usr/local/bin/composer`;
+    }
 
-  languageConfig.dist = distName;
-} else {
-  languageConfig.dist = "Ubuntu";
-}
-
-If there is no setup default will be Ubuntu if linux configuration is set.</code></pre>
+    break;
+  case process.distros.ALPINE:
+    compilerConfig.install = `${sudo}apk add php php7-json php-imap`;
+    break;
+  case process.distros.ARCH:
+    compilerConfig.install = `${sudo}pacman -Sy --noconfirm php php-imap`;
+    break;
+  case process.distros.FEDORA:
+    compilerConfig.install = `${sudo}dnf install -y php php-json`;
+    break;
+  case process.distros.CENTOS:
+    compilerConfig.install = `${sudo}yum install -y epel-release* &amp;&amp; yum install -y php php-json php-imap`;
+    break;
+  case process.distros.SUSE_LEAP:
+  case process.distros.SUSE_TUMBLEWEED:
+    compilerConfig.install = `${sudo}zypper -n install php7 php7-json`;
+    break;
+  case process.distros.AMAZON:
+  case process.distros.AMAZON_AMI:
+  case process.distros.RHEL:
+    compilerConfig.install = `${sudo}yum install -y php php-json php-imap`;
+    break;
+  default:
+}</code></pre>
 <p>Note: This is WIP version, however put more light on the subject.</p>
 <p>Here is the information about how to implement new languages or expand current config for other OSes.
-Please remember that if you are doing any changes to the languages configuration you need to recreate cache (once) by adding <code>--nocache</code> eg. <code>nexss myfile.go --nocache</code>. It will take a bit longer </p>
+Please remember that if you are doing any changes to the languages configuration you need to recreate cache (once) by adding <code>--nocache</code> eg. <code>nexss myfile.go --nocache</code>. It will take a bit longer. Also <code>nexss cache rebuild</code> (2.2.37+)</p>
 <p>All configurations of the languages, compilers are installed on demand so for example if you run command <code>nexss myfile.go</code> and compiler of the go language is not there Nexss Programmer will install it for You.</p>
 <p>The configuration files for the languages are in the folder <code>c:/Users/YourUsername/.nexss/languages/</code>
 Those files are written in JavaScript, however they are straight forward as need only to put different values on variables. We haven't use pure JSON as with this way it is more flexible.</p>
@@ -133,7 +148,7 @@ more here: <a href="programmer.html/Files---Templates">Files---Templates</a></li
 <li>File <strong>nexss.php.errors.js</strong> which contains error/solution definitions, more here:<a href="programmer.html/Errors-Solutions">Errors-Solutions</a> </li>
 <li>File <strong>php.win32.nexss.config.js</strong> definition of the Windows OS.</li>
 </ul>
-<p>Below can be defined but for now Nexss Programmer has defined only on Windows OS despite it's working also on <strong>WSL - Windows Subsystem Linux</strong></p>
+<p>Nexss Programmer working also on <strong>WSL - Windows Subsystem Linux</strong></p>
 <ul>
 <li>File <strong>php.linux.nexss.config.js</strong> definition of the Linux OS.</li>
 <li>File <strong>php.darwin.nexss.config.js</strong> definition of the Mac OS.</li>
