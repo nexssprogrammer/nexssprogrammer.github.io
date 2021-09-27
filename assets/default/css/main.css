@@ -587,10 +587,6 @@ div.block {
   align-items: center;
 }
 
-.nav .activeLink {
-  color: #4eea00;
-}
-
 @media screen and (max-width: 800px) {
   .nav {
     display: none;
@@ -2617,4 +2613,8 @@ form .finalPrice {
 
 #order-address {
   width: 70%;
+}
+
+a strong {
+  color: #4eea00;
 }
