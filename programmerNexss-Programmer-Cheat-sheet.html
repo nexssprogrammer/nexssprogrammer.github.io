@@ -99,15 +99,12 @@ nexss file add my.rs --edit # Will open list of templates for particular languag
 
 nexss php run "print('x');" # 2.2.37+
 nexss py run "print('x')"  # 2.2.37+</code></pre>
+<ul>
+<li><strong>NEW:</strong> easy shortcuts: <code>nexss py d</code> (creates file with default template), <code>nexss py h</code> (with helloWorld template), <code>nexss py e</code> (and empty file - if exists in the templates - !empty.[extension]) (2.4.8+)</li>
+</ul>
 <h2>Cache</h2>
 <p>Nexss Programmer keep cache from the language configurations for efficiency. Use <code>nexss cache rebuild</code> (2.2.38+) to rebuild cache.</p>
 <pre><code class="language-sh">nexss cache rebuild # 2.2.38+</code></pre>
-<h2>Run different Nexss Programmer envs (different languages/packages/defaults etc)</h2>
-<p>Nexss Programmer has special env variable which can be changed to work with different environment, cache etc.</p>
-<h3>Powershell</h3>
-<pre><code class="language-ps1">$env:NEXSS_HOME_PATH = "C:/Users/mapoart/.nexssSomethingElse/"
-nexss -env --nocache # This page will confirm that env has been changed.
-[System.Environment]::SetEnvironmentVariable('NEXSS_HOME_PATH','C:/Users/mapoart/.nexssSomethingElse/',[System.EnvironmentVariableTarget]::User)</code></pre>
 <h2>Quick/Helper functions (-)</h2>
 <p>Nexss programmer has some quick functions which helps during development of Nexss Programmer packages but not only..</p>
 <ul>
@@ -239,6 +236,12 @@ nexss config get --configPath c:/Users/mapoart/.nexss/packages/Nexss/Test/Sequen
 <h1>Test</h1>
 <p>nexss test # displays available tests. If you are in the project it will look at the test folder of the project. If you want to run "global" tests for nexss programmer itself go to the any folder which is not a Nexss Programmer project and run 'nexss test' again.
 nexss test languages # This is a long time taking command. It will install all compilers and test the languages by default and helloWorld templates to make sure everything works.</p>
+<h2>Run different Nexss Programmer envs (different languages/packages/defaults etc)</h2>
+<p>Nexss Programmer has special env variable which can be changed to work with different environment, cache etc.</p>
+<h3>Powershell</h3>
+<pre><code class="language-ps1">$env:NEXSS_HOME_PATH = "C:/Users/mapoart/.nexssSomethingElse/"
+nexss -env --nocache # This page will confirm that env has been changed.
+[System.Environment]::SetEnvironmentVariable('NEXSS_HOME_PATH','C:/Users/mapoart/.nexssSomethingElse/',[System.EnvironmentVariableTarget]::User)</code></pre>
 <h2>Messages and Errors</h2>
 <p>Nexss Programmer display messsages and errors during run. It's a bit special because every message or error going through STDERR package</p>
 <ul>
@@ -264,7 +267,6 @@ nexss test languages # This is a long time taking command. It will install all c
 <li>Getting Started
 <ul>
 <li><a href="programmer.html/Concept-Overview">Overview</a></li>
-<li><a href="programmer.html/Quick-Start">Quick Start</a></li>
 <li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
 <li><a href="programmer.html/Nexss-Files">.nexss</a></li>
 <li><a href="programmer.html/Tutorials">Tutorials</a></li>
