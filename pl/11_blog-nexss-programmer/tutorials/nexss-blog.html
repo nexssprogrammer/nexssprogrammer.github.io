@@ -194,6 +194,7 @@ permalink: /pl/11_blog-nexss-programmer/tutorials/nexss-blog.html
 <ul>
 <li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#howtousenexssprogrammerwithgooglecolabnotebook">How to use Nexss Programmer with Google Colab NoteBook</a></li>
 <li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#uploadfileyourprogramtogooglecolab">Upload your programs to Google Colab NoteBook</a></li>
+<li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#splittheaudio">Split your favorite audio in to the separate tracks</a></li>
 </ul>
 <p><a name="howtousenexssprogrammerwithgooglecolabnotebook"></a></p>
 <h3>How to use Nexss Programmer with Google Colab NoteBook</h3>
@@ -238,7 +239,25 @@ drive.mount('/mygoogledrive') # you can use here any mounting point/name</code><
 <pre><code class="language-py"># Run program in Google Colab from any programming language with Nexss Programmer
 # You can also pass absolute path.
 !nexss '/mygoogledrive/MyDrive/ColabDrive/helloWorld.cr'</code></pre>
-<p>We can mount google drive and use files from there for example:</p>
+<p><br></p>
+<p><a name="splittheaudio"></a></p>
+<h3>Split your favorite audio in to the separate tracks</h3>
+<h4>Audio/Split Nexss Programmer package</h4>
+<pre><code class="language-sh">nexss Audio/Split help # to display help
+
+nexss Audio/Split myfile.mp3 // --_tracks=2  - 2 is default Vocals (singing voice) / accompaniment separation
+nexss Audio/Split myfile.mp3 --_tracks=4 // Vocals / drums / bass / other separation
+nexss Audio/Split myfile.mp3 --_tracks=5 // Vocals / drums / bass / piano / other separation</code></pre>
+<h4>Google colab</h4>
+<p>Try it for yourself easy on <a href="https://colab.research.google.com/">Colab</a></p>
+<pre><code class="language-sh">!npm install -g @nexssp/cli
+!nexss
+!nexss Download &lt;your mp3 or wav file url like https://mydomain.com/myfile.mp3&gt;
+!nexss Audio/Split myfile.mp3
+!nexss Audio/Split myfile.mp3 --_option=5 # will separate in to the 5 tracks.</code></pre>
+<p>Please notice that Nexss Programmer Audio/Split package uses amazing <a href="https://github.com/deezer/spleeter">https://github.com/deezer/spleeter</a></p>
+<h2>Any Issues with the Nexss Programmer?</h2>
+<p>If you are experiencing any issues with the <strong>Nexss Programmer</strong> please send us an email at: <a href="mailto:programmer@nexss.com">programmer@nexss.com</a></p>
       </div>
     </div>
   </div>
