@@ -2625,8 +2625,11 @@ form .finalPrice {
   width: 70%;
 }
 
-a strong {
-  color: #4eea00;
+.header__top a strong {
+  color: #68e300;
+}
+.footer__top a strong {
+  color: #68e300;
 }
 
 footer a {

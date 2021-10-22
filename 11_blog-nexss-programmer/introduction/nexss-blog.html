@@ -123,16 +123,6 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
     </li>
 </ul>
     </div>
-    <style>
-        a.career:link,
-        a.career:visited {
-            color: #61d4ff !important;
-        }
-
-        a.career:hover {
-            color: #61ffd4 !important;
-        }
-    </style>
 </div>
     </div>
       <div class="header__bottom">
@@ -153,43 +143,39 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
     });
 </script><div class="block" id="nexssPage">
   <div class="center">
-    <h1 class="block__title">
-      <span>Nexss Programmer </span>
-      The Programming Blog
-    </h1>
-    <div class="row">
+        <div class="row">
       <div class="column1">
                 <h3>Welcome</h3>
         <ul>
-                    <li><a href="0_Welcome/news/nexss-blog.html">News</a></li>
+                    <li><a href="0_Welcome/news/nexss-blog.html">News </a></li>
                   </ul>
                 <h3>Nexss Programmer</h3>
         <ul>
-                    <li><a href="11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction</a></li>
-                    <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials</a></li>
-                    <li><a href="11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage</a></li>
+                    <li><a class="active" href="11_blog-nexss-programmer/introduction/nexss-blog.html"><strong>Introduction</strong> </a></li>
+                    <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials </a></li>
+                    <li><a href="11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage </a></li>
                   </ul>
                 <h3>Node.js</h3>
         <ul>
-                    <li><a href="21_Node.js/module_alias/nexss-blog.html">Module_alias</a></li>
+                    <li><a href="21_Node.js/module_alias/nexss-blog.html">Module_alias </a></li>
                   </ul>
                 <h3>Blender 3D</h3>
         <ul>
-                    <li><a href="369_blog-blender-3D/custom-scripting-templates/nexss-blog.html">Custom Scripting Templates</a></li>
-                    <li><a href="369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes</a></li>
+                    <li><a href="369_blog-blender-3D/custom-scripting-templates/nexss-blog.html">Custom Scripting Templates </a></li>
+                    <li><a href="369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
                   </ul>
                 <h3>Natron</h3>
         <ul>
-                    <li><a href="639_blog-natron/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes</a></li>
+                    <li><a href="639_blog-natron/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
                   </ul>
                 <h3>Our Free Packages</h3>
         <ul>
-                    <li><a href="969_Our-free-packages/introduction/nexss-blog.html">Introduction</a></li>
-                    <li><a href="969_Our-free-packages/list-of-free-packages/nexss-blog.html">List Of Free Packages</a></li>
+                    <li><a href="969_Our-free-packages/introduction/nexss-blog.html">Introduction </a></li>
+                    <li><a href="969_Our-free-packages/list-of-free-packages/nexss-blog.html">List Of Free Packages </a></li>
                   </ul>
               </div>
       <div class="column2">
-        <h2>Introduction</h2>
+        <h1>Introduction</h1>
 <p>Welcome to the Nexss Programmer Blog. Here you will find more information about how to use the <strong>Nexss Programmer</strong>.</p>
 <hr>
 <p><strong>Nexss Programmer</strong> is for people who are starting their career in programming, but also for the professionals. You can also learn about older programming languages that are not so popular anymore. Nexss has many tools and a lot of functionalities to help you gather as much knowledge as possible to become better programmer. It also allow to compose many languages and has a lot of innovative functionality.</p>
@@ -200,8 +186,28 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
     </div>
   </div>
   <style>
+    .column1 a.active{
+      color:#47167d;
+      font-weight:bold;
+    }
 
-    .column1 h3 {
+    .column1 a,c
+  .column2 h2 {
+    border-bottom: 1px solid #d8d8d8;
+      padding: .1em 0;
+      margin-bottom: 0.5em;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+    .column1 h2 {
       font-size:1.2em;
       margin:0;
       padding:0;
@@ -211,6 +217,7 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
   .column1 {
     float: left;
     width: 20%;
+    min-width:100px;
   }
 
   .column2 {
@@ -224,6 +231,10 @@ permalink: /11_blog-nexss-programmer/introduction/nexss-blog.html
     content: "";
     display: table;
     clear: both;
+  }
+
+  #nexssPage {
+    min-width:600px;
   }
 </style>
 <script>

@@ -123,16 +123,6 @@ permalink: /pl/hello@nexss.com
     </li>
 </ul>
     </div>
-    <style>
-        a.career:link,
-        a.career:visited {
-            color: #61d4ff !important;
-        }
-
-        a.career:hover {
-            color: #61ffd4 !important;
-        }
-    </style>
 </div>
     </div>
       <div class="header__bottom">
