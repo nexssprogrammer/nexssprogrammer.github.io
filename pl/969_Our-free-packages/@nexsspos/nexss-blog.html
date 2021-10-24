@@ -1,6 +1,6 @@
 ---
-title: "BLOG Our Free Packages - Introduction"
-permalink: /pl/969_Our-free-packages/introduction/nexss-blog.html
+title: "BLOG Our Free Packages - @nexsspos"
+permalink: /pl/969_Our-free-packages/@nexsspos/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="en"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,16 +13,16 @@ permalink: /pl/969_Our-free-packages/introduction/nexss-blog.html
 </script>
 
   <title>
-    BLOG Our Free Packages - Introduction
+    BLOG Our Free Packages - @nexsspos
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="Introduction - Nexss Programmer Blog">
+  <meta name="description" content="@nexsspos - Nexss Programmer Blog">
   
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Our Free Packages - Introduction">
+  <meta property="og:description" content="BLOG Our Free Packages - @nexsspos">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -58,11 +58,11 @@ permalink: /pl/969_Our-free-packages/introduction/nexss-blog.html
         <ul class="info" id="changeLanguage">
             <li>Made with <span style="font-size:larger;color:#ff0003">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
-                <a href="/en/969_Our-free-packages/introduction/nexss-blog.html">EN</a>
+                <a href="/en/969_Our-free-packages/@nexsspos/nexss-blog.html">EN</a>
             </li>
             <li>/</li>
             <li>
-                <a style="color:yellow;font-weight:bold;" class="selected" href="/pl/969_Our-free-packages/introduction/nexss-blog.html">PL</a>
+                <a style="color:yellow;font-weight:bold;" class="selected" href="/pl/969_Our-free-packages/@nexsspos/nexss-blog.html">PL</a>
             </li>
         </ul>
         <div class="soc clearfix">
@@ -171,16 +171,64 @@ permalink: /pl/969_Our-free-packages/introduction/nexss-blog.html
                   </ul>
                 <h3>Our Free Packages</h3>
         <ul>
-                    <li><a class="active" href="pl/969_Our-free-packages/introduction/nexss-blog.html"><strong>Introduction</strong> </a></li>
+                    <li><a href="pl/969_Our-free-packages/introduction/nexss-blog.html">Introduction </a></li>
                     <li><a href="pl/969_Our-free-packages/list-of-free-packages/nexss-blog.html">List Of Free Packages </a></li>
-                    <li><a href="pl/969_Our-free-packages/@nexsspos/nexss-blog.html">@nexsspos </a></li>
+                    <li><a class="active" href="pl/969_Our-free-packages/@nexsspos/nexss-blog.html"><strong>@nexsspos</strong> </a></li>
                   </ul>
               </div>
       <div class="column2">
-        <h1>Our Free Packages - Introduction</h1>
-<p>We are creating Open Source packages which you can use with your own projects.</p>
-<hr>
-<p>Here you can find the whole list: <a href="pl/969_Our-free-packages/list-of-free-packages/nexss-blog.html">Nexss's Free/Open Source packages.</a></p>
+        <h1>@nexssp/os</h1>
+<pre><code class="language-sh">!npm i @nexssp/os -g # global installation so you can use nexssp-os everywere</code></pre>
+<h2>Usage as a cli tool - nexssp-os</h2>
+<h3>nexssp-os env</h3>
+<pre><code class="language-sh">nexssp-os env # after installing with -g flag
+
+npx @nexssp/os env # OR nexssp-os env OR nexss -env - it's without installing</code></pre>
+<h4>Windows</h4>
+<pre><code class="language-txt">OS Information
+Windows version:         Microsoft Windows [Version 10.0.19043.1288]
+Search command:          scoop search
+Install command:         scoop install
+Update command:          scoop update
+Uninstall command:       scoop uninstall
+Tags:                    WINDOWS, WINDOWS10, WINDOWS100 (to use in a distro recognition)</code></pre>
+<h4>Linux</h4>
+<pre><code class="language-txt">OS Information
+Linux distribution:      Ubuntu
+Linux version os.v():    18.04
+Search command:          apt-cache search
+Install command:         apt-get install -y
+Update command:          apt-get update -y
+Uninstall command:       apt-get remove -y
+Tags:                    UBUNTU, UBUNTU18, UBUNTU1804 (to use in a distro recognition)</code></pre>
+<h3>nexssp-os where</h3>
+<pre><code class="language-sh">nexssp-os where git # will display path of the git</code></pre>
+<h3>nexssp-os install, uninstall, update, search &lt;package&gt;</h3>
+<pre><code class="language-sh">nexssp-os install git # will install git. Package manager is choosed automatically
+nexssp-os install git --dry # will only display command for the os eg apt-get install -y git
+
+# update, uninstall and search the same as above</code></pre>
+<h3>nexssp-os get</h3>
+<p>with <strong>--json</strong> flag will return json
+with passed field will return only value for this field.</p>
+<pre><code class="language-json">{
+  "DISTRIB_ID": "Ubuntu",
+  "DISTRIB_RELEASE": "18.04",
+  "DISTRIB_CODENAME": "bionic",
+  "DISTRIB_DESCRIPTION": "Ubuntu 18.04.5 LTS",
+  "NAME": "Ubuntu",
+  "VERSION": "18.04.5 LTS (Bionic Beaver)",
+  "ID": "ubuntu",
+  "ID_LIKE": "debian",
+  "PRETTY_NAME": "Ubuntu 18.04.5 LTS",
+  "VERSION_ID": "18.04",
+  "HOME_URL": "https://www.ubuntu.com/",
+  "SUPPORT_URL": "https://help.ubuntu.com/",
+  "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+  "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+  "VERSION_CODENAME": "bionic",
+  "UBUNTU_CODENAME": "bionic"
+}</code></pre>
       </div>
     </div>
   </div>
