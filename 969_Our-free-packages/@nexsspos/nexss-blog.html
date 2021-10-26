@@ -152,6 +152,7 @@ permalink: /969_Our-free-packages/@nexsspos/nexss-blog.html
                 <h3>Nexss Programmer</h3>
         <ul>
                     <li><a href="11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction </a></li>
+                    <li><a href="11_blog-nexss-programmer/installation/nexss-blog.html">Installation </a></li>
                     <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials </a></li>
                     <li><a href="11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage </a></li>
                   </ul>
@@ -159,6 +160,7 @@ permalink: /969_Our-free-packages/@nexsspos/nexss-blog.html
         <ul>
                     <li><a href="21_Node.js/module_alias/nexss-blog.html">Module_alias </a></li>
                     <li><a href="21_Node.js/lockfileVersion-issue/nexss-blog.html">LockfileVersion Issue </a></li>
+                    <li><a href="21_Node.js/npm-link-unlink/nexss-blog.html">Npm Link Unlink </a></li>
                   </ul>
                 <h3>Blender 3D</h3>
         <ul>
@@ -178,7 +180,15 @@ permalink: /969_Our-free-packages/@nexsspos/nexss-blog.html
               </div>
       <div class="column2">
         <h1>@nexssp/os</h1>
-<pre><code class="language-sh">!npm i @nexssp/os -g # global installation so you can use nexssp-os everywere</code></pre>
+<p>This package can be used from the <strong>Nexss Programmer</strong> aswell as separately. Example by <strong>install</strong> command (They are the same):</p>
+<pre><code class="language-sh">nexss os install mypackage # through Nexss Programmer
+nexssp-os install mypackage # separately
+npx @nexssp/os install mypackage # without installation</code></pre>
+<h2>Installation</h2>
+<pre><code class="language-sh">npm i @nexssp/os -g # separate global installation so you can use nexssp-os everywere in the system
+
+npm i @nexssp/cli -g # install Nexss Programmer the latest version
+npm i @nexssp/cli@2.4 -g # install older version of the Nexss Programmer the latest version</code></pre>
 <h2>Usage as a cli tool - nexssp-os</h2>
 <h3>nexssp-os env</h3>
 <pre><code class="language-sh">nexssp-os env # after installing with -g flag
@@ -229,6 +239,9 @@ with passed field will return only value for this field.</p>
   "VERSION_CODENAME": "bionic",
   "UBUNTU_CODENAME": "bionic"
 }</code></pre>
+<h3>nexssp-os tags</h3>
+<pre><code class="language-sh">nexss os tags</code></pre>
+<pre><code class="language-json">["UBUNTU", "UBUNTU18", "UBUNTU1804"]</code></pre>
       </div>
     </div>
   </div>
