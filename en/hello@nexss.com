@@ -56,7 +56,7 @@ permalink: /en/hello@nexss.com
 
         </ul>
         <ul class="info" id="changeLanguage">
-            <li>Made with <span style="font-size:larger;color:#ff0003">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg"></li>
+            <li>Made with <span style="font-size:larger;color:#ff0003 !important;">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
                 <a style="color:yellow;font-weight:bold;" href="/en/hello@nexss.com">EN</a>
             </li>
@@ -237,7 +237,7 @@ permalink: /en/hello@nexss.com
 </style>
  <div class="footer__bottom">
   <div class="center">
-    Copyright © 2008 - 2021 Nexss.com, Made with <span style="font-size:larger;color:#ff0003">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg">
+    Copyright © 2008 - 2021 Nexss.com, Made with <span style="font-size:larger;color:#ff0003 !important;">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg">
   </div>
   <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
     <b>Nexss.com</b> website use cookies on this website to log statistics data.<br>
