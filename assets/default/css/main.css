@@ -388,7 +388,7 @@ h4 {
     line-height: 50px;
   }
   .block__title span {
-    font-size: 18px;
+    font-size: 1.2em;
     line-height: 22px;
   }
 }
@@ -400,7 +400,7 @@ h4 {
     line-height: 40px;
   }
   .block__title span {
-    font-size: 16px;
+    font-size: 1em;
     line-height: 22px;
   }
   h1,
@@ -550,10 +550,15 @@ div.block {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #0a3a7c;
+  background-color: #0d2e5b;
   background-image: url(../images/welcome.jpg);
   position: relative;
 }
+
+/* .header__bottom {
+  -webkit-background-size: cover;
+  background-size: cover;
+} */
 
 .header__bottom .center {
   padding: 0px 15px 26px 15px;
@@ -573,6 +578,10 @@ div.block {
   .header__bottom .center {
     padding: 15px 15px 15px 15px;
   }
+
+  .header__bottom {
+    background-position: -300px 0;
+  }
 }
 
 .nav {
@@ -588,9 +597,56 @@ div.block {
   align-items: center;
 }
 
+h1 span.text_2 {
+  margin: 0;
+  margin-top: 30px;
+  color: #fec518;
+  display: block;
+}
+
 @media screen and (max-width: 800px) {
   .nav {
     display: none;
+  }
+
+  .header__bottom {
+    background-position: -830px 0;
+  }
+
+  div.text_3 {
+    font-size: 1.3em !important;
+    max-width: 90%;
+  }
+
+  div.text_2 {
+    margin-top: 10px !important;
+  }
+
+  .welcome h1 {
+    text-align: center;
+    font-size: larger;
+    line-height: normal;
+  }
+
+  h1 span.text_2 {
+    margin: 0;
+    margin-top: 10px;
+    color: #fec518;
+  }
+
+  .services .item figure {
+    margin-bottom: 0px;
+  }
+
+  .services .item .title {
+    margin-bottom: 0px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: normal;
   }
 }
 
@@ -611,7 +667,11 @@ div.block {
 .nav > ul > li a {
   cursor: pointer;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 1.3em;
+  background-color: rgba(0, 0, 30, 0.6);
+  padding: 7px;
+  border-radius: 10%;
+
   /* font-family: "Varela Round", sans-serif; */
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
@@ -752,7 +812,7 @@ div.block {
 
 .welcome {
   color: #fff;
-  padding: 170px 0px 260px 0px;
+  /* padding: 170px 0px 260px 0px; */
   /* font-family: "Varela Round", sans-serif; */
 }
 
@@ -779,7 +839,7 @@ div.block {
 
 @media screen and (max-width: 1150px) {
   .header__bottom .welcome {
-    padding: 100px 0px 100px 0px;
+    /* padding: 100px 0px 100px 0px; */
   }
   .header__bottom .welcome .text_1 {
     font-size: 70px;
@@ -1027,6 +1087,7 @@ div.block {
 .services .item .title {
   /* font-family: "Varela Round", sans-serif; */
   font-size: 20px;
+  font-weight: bolder;
   color: #262626;
   margin-bottom: 6px;
   text-align: center;
@@ -2246,7 +2307,7 @@ div.block {
   position: relative;
   padding-left: 60px;
   font-family: "Lato", sans-serif;
-  font-size: 16px;
+  font-size: 2em;
   color: #262626;
   text-decoration: none;
 }
@@ -2372,6 +2433,7 @@ div.block {
   color: #ffffff;
   text-align: center;
   padding-top: 20px;
+  font-size: 1.2em !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -2389,7 +2451,6 @@ div.block {
   max-width: 710px;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
-  font-size: 15px;
   line-height: 22px;
   margin-bottom: 38px;
 }
@@ -2411,7 +2472,6 @@ div.block {
   /* display: inline-block; */
   /* margin-right: 40px; */
   font-family: "Lato", sans-serif;
-  font-size: 13px;
   text-align: center;
 }
 
@@ -2649,6 +2709,7 @@ a:hover {
 .container {
   flex: 1;
   /* same as flex-grow: 1; */
+  min-width: 480px;
 }
 
 .ft-main {
