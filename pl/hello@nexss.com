@@ -2,7 +2,7 @@
 title: ""
 permalink: /pl/hello@nexss.com
 ---
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="pl"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
