@@ -195,7 +195,25 @@ permalink: /en/nexss-blog.html
               </div>
       <div class="column2">
         <h1>News</h1>
-<h2>Nexss Programmer release <b>2.5.61</b> - Preact</h2>
+<h2>Nexss Programmer release <b>2.5.70</b> - Vue3, Convert ToWebP</h2>
+<p><span style="color:#4e8800;margin-bottom:10px;margin-top:-5px;font-weight:bold;">November 16th, 2021</span></p>
+<ul>
+<li>New functionality. Create new project types (<strong>vue3</strong>) with <strong>hot reloading</strong>.
+<pre><code class="language-sh">nexss p vue3 myproject-preact 
+nexss p vue3 myproject-preact --install</code></pre>
+<p>option <strong>--install</strong> installs all necessary packages.  </p></li>
+</ul>
+<h2>Convert to Webp</h2>
+<pre><code class="language-nexss"># many ways of using Nexss Programmer
+nexss Convert/ToWebP file1.png file2.jpg
+nexss Convert/ToWebP/Images # Convert all images in the current folder
+nexss FS/Files . | nexss Convert/ToWebP
+nexss FS/Files . --nxsExecute='nexss Convert/ToWebP --quiet' --nxsField=nxsExecuteOutput
+</code></pre>
+<ul>
+<li><a href="https://github.com/nexssp/cli/releases/tag/2.5.70">more</a>
+<h2>Nexss Programmer release <b>2.5.61</b> - Preact</h2></li>
+</ul>
 <p><span style="color:#4e8800;margin-bottom:10px;margin-top:-5px;font-weight:bold;">November 10th, 2021</span></p>
 <ul>
 <li>New functionality. Create new project types (<strong>preact</strong>) with <strong>hot reloading</strong>.
