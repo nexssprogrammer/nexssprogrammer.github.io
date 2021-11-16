@@ -196,6 +196,7 @@ permalink: /pl/11_blog-nexss-programmer/tutorials/nexss-blog.html
 <li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#howtousenexssprogrammerwithgooglecolabnotebook">How to use Nexss Programmer with Google Colab NoteBook</a></li>
 <li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#uploadfileyourprogramtogooglecolab">Upload your programs to Google Colab NoteBook</a></li>
 <li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#splittheaudio">Split your favorite audio in to the separate tracks</a></li>
+<li><a href="/pl/11_blog-nexss-programmer/tutorials/nexss-blog.html#convertimagestowebp">Convert images to WebP</a></li>
 </ul>
 <p><a name="howtousenexssprogrammerwithgooglecolabnotebook"></a></p>
 <h3>How to use Nexss Programmer with Google Colab NoteBook</h3>
@@ -257,6 +258,13 @@ nexss Audio/Split myfile.mp3 --_tracks=5 // Vocals / drums / bass / piano / othe
 !nexss Audio/Split myfile.mp3
 !nexss Audio/Split myfile.mp3 --_option=5 # will separate in to the 5 tracks.</code></pre>
 <p>Please notice that Nexss Programmer Audio/Split package uses amazing <a href="https://github.com/deezer/spleeter">https://github.com/deezer/spleeter</a></p>
+<p><a name="convertimagestowebp"></a></p>
+<h3>Convert images to WebP</h3>
+<p>Now you can convert images to <strong>WebP</strong></p>
+<pre><code class="language-sh"># cli commands
+nexss Convert/ToWebP file1.png file2.jpg # convert selected files
+nexss Convert/ToWebP/Images # will convert allfiles in the current folder</code></pre>
+<pre><code class="language-nexss"></code></pre>
 <h2>Any Issues with the Nexss Programmer?</h2>
 <p>If you are experiencing any issues with the <strong>Nexss Programmer</strong> please send us an email at: <a href="mailto:programmer@nexss.com">programmer@nexss.com</a></p>
       </div>
