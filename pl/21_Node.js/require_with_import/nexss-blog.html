@@ -49,14 +49,9 @@ permalink: /pl/21_Node.js/require_with_import/nexss-blog.html
             <li>
                 <a id="ext3"></a>
             </li>
-                        <!-- <li class="hideSmall">
-                <i class="fa fa-map-marker"></i>
-                86-005, Prądki, Polska
-            </li> -->
-
-        </ul>
+                                </ul>
         <ul class="info" id="changeLanguage">
-            <li>Made with <span style="font-size:larger;color:#ff0003 !important;">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg"></li>
+            <li>Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
                 <a href="/en/21_Node.js/require_with_import/nexss-blog.html">EN</a>
             </li>
@@ -191,9 +186,15 @@ permalink: /pl/21_Node.js/require_with_import/nexss-blog.html
               </div>
       <div class="column2">
         <h1>Require with Import - NodeJS</h1>
-<p>You can use require and import together with this setup:</p>
-<h2>Files</h2>
-<h3>package.json</h3>
+<p>You can use <em>require and import</em> together with:</p>
+<h2>Method 1</h2>
+<p>First rename file to <strong>.mjs</strong> or add <strong>"type":"module"</strong> to your <strong>package.json</strong> file.</p>
+<pre><code class="language-mjs">// create require function in the mjs
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);</code></pre>
+<h2>Method 2</h2>
+<h3>Files</h3>
+<h4>package.json</h4>
 <pre><code class="language-json">{
   "main": "esm_main.js",
   "module": "esm_index.js",
@@ -206,10 +207,10 @@ permalink: /pl/21_Node.js/require_with_import/nexss-blog.html
     "mainFields": ["modules", "main"]
   }
 }</code></pre>
-<h3>esm_main.js</h3>
+<h4>esm_main.js</h4>
 <pre><code class="language-js">require = require("esm")(module);
 module.exports = require("./esm_index.js");</code></pre>
-<h3>esm_index.js</h3>
+<h4>esm_index.js</h4>
 <pre><code class="language-js">// Import statement
 import { hostname } from "os";
 
@@ -219,7 +220,7 @@ const os = require("os");
 console.log(hostname());
 
 console.log(os.arch());</code></pre>
-<h3>test</h3>
+<h4>test</h4>
 <pre><code class="language-sh">nexss esm_main.js
 
 # OR just
@@ -391,7 +392,7 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 </style>
  <div class="footer__bottom">
   <div class="center">
-    Copyright © 2008 - 2021 Nexss.com, Made with <span style="font-size:larger;color:#ff0003 !important;">♥</span> in <img alt="Poland" height="10" src="assets/images/flagPL.jpg">
+    Copyright © 2008 - 2021 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
   </div>
   <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
     <b>Nexss.com</b> używa ciasteczka do rejestrowania danych statystycznych.<br>
