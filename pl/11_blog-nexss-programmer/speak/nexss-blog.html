@@ -1,6 +1,6 @@
 ---
-title: "BLOG Nexss Programmer - Installation"
-permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
+title: "BLOG Nexss Programmer - Speak"
+permalink: /pl/11_blog-nexss-programmer/speak/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="pl"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,16 +13,16 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
 </script>
 
   <title>
-    BLOG Nexss Programmer - Installation
+    BLOG Nexss Programmer - Speak
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="Installation - Nexss Programmer Blog">
+  <meta name="description" content="Speak - Nexss Programmer Blog">
   
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Nexss Programmer - Installation">
+  <meta property="og:description" content="BLOG Nexss Programmer - Speak">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -53,11 +53,11 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
         <ul class="info" id="changeLanguage">
             <li>Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
-                <a href="/en/11_blog-nexss-programmer/installation/nexss-blog.html">EN</a>
+                <a href="/en/11_blog-nexss-programmer/speak/nexss-blog.html">EN</a>
             </li>
             <li>/</li>
             <li>
-                <a style="color:yellow;font-weight:bold;" class="selected" href="/pl/11_blog-nexss-programmer/installation/nexss-blog.html">PL</a>
+                <a style="color:yellow;font-weight:bold;" class="selected" href="/pl/11_blog-nexss-programmer/speak/nexss-blog.html">PL</a>
             </li>
         </ul>
         <div class="soc clearfix">
@@ -147,11 +147,11 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
                 <h3>Nexss Programmer</h3>
         <ul>
                     <li><a href="pl/11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction </a></li>
-                    <li><a class="active" href="pl/11_blog-nexss-programmer/installation/nexss-blog.html"><strong>Installation</strong> </a></li>
+                    <li><a href="pl/11_blog-nexss-programmer/installation/nexss-blog.html">Installation </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/frontend/nexss-blog.html">Frontend </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage </a></li>
-                    <li><a href="pl/11_blog-nexss-programmer/speak/nexss-blog.html">Speak </a></li>
+                    <li><a class="active" href="pl/11_blog-nexss-programmer/speak/nexss-blog.html"><strong>Speak</strong> </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/file-dropper/nexss-blog.html">File Dropper </a></li>
                   </ul>
                 <h3>Node.js</h3>
@@ -186,14 +186,18 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h1>Nexss Programmer - Installation</h1>
-<h2>Node.js</h2>
-<p>Nexss Programmer 2.x is written in the <a href="https://nodejs.org/">Node.js</a>. If you don't have it installed please go to the website <a href="https://nodejs.org/en/">https://nodejs.org/en/</a> and use instructions there.</p>
-<h2>Nexss Programmer</h2>
-<pre><code class="language-sh">npm i -g @nexssp/cli</code></pre>
-<h2>Using npx</h2>
-<p>You don't need to install Nexss Programmer and just use <strong>npx</strong> (after Node.js installation).</p>
-<pre><code class="language-sh">npx @nexssp/cli</code></pre>
+        <h1>Speak / Read the website content!</h1>
+<h2>Basic Examples</h2>
+<h3>file: readwebsite1.nexss</h3>
+<p>Below is the example of speaking the website title.</p>
+<p><img src="https://user-images.githubusercontent.com/53263666/144295624-6846d7e3-940c-4cb2-8f7e-b29a9e7b49f2.png" alt="Nexss Programmer - Speak website content/title"></p>
+<h2>Using nexss variables</h2>
+<pre><code class="language-nexss">https://nexss.com --nxsAs=myWebsiteSource
+Select/Dom --nxsInFrom=myWebsiteSource --_selector=title
+Speak
+Select/Dom --nxsInFrom=myWebsiteSource --_selector=h1
+Speak
+Output/End "Done."</code></pre>
       </div>
     </div>
   </div>
