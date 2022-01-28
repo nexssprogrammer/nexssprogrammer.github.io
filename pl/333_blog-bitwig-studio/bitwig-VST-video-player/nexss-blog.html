@@ -215,11 +215,14 @@ permalink: /pl/333_blog-bitwig-studio/bitwig-VST-video-player/nexss-blog.html
 <li>
 <p>Go to the <strong>Bitwig Studio</strong>-&gt;<strong>Settings</strong>-&gt;<strong>Synchronization</strong> and click on <strong>MTC</strong> for "myMidiLoopback".</p>
 </li>
-<li>
-<p>Now start playing music in the Bitwig Studio and you can see that video is syncronized.</p>
-<p><br></p>
-</li>
+<li>Now start playing music in the Bitwig Studio and you can see that video is synchronized.
+<br>
+<span style="color:green;">
+<strong>NOTE</strong> If it is still not playing with bitwig you may need to look at xjadeo starting. For example change from -m -1 (autodetect) to different number: -m 3 (when -1 didn't work)
+</span></li>
 </ol>
+<pre><code class="language-sh">"C:\Program Files\xjadeo\xjadeo.exe" -S -a -i 3 --midi-driver portmidi -m 3</code></pre>
+<p><br></p>
 <p><em>note:</em> You can make the <strong>video player</strong> window stay on top <strong>Right Click-&gt;Display-&gt;On Top</strong> or using short cut <strong>SHIFT+A</strong> (keep pressed bit longer as short may not work.)</p>
 <p><em>note 2:</em> You can shrink the video for a better performance using <strong>ffmpeg</strong>. For example:</p>
 <pre><code class="language-sh"># shrink your video to one quarter size. Change 8 to 4 for half size.
@@ -391,7 +394,7 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 </style>
  <div class="footer__bottom">
   <div class="center">
-    Copyright © 2008 - 2021 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
+    Copyright © 2008 - 2022 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
   </div>
   <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
     <b>Nexss.com</b> używa ciasteczka do rejestrowania danych statystycznych.<br>

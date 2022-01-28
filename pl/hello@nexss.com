@@ -232,7 +232,7 @@ permalink: /pl/hello@nexss.com
 </style>
  <div class="footer__bottom">
   <div class="center">
-    Copyright © 2008 - 2021 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
+    Copyright © 2008 - 2022 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
   </div>
   <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
     <b>Nexss.com</b> używa ciasteczka do rejestrowania danych statystycznych.<br>
