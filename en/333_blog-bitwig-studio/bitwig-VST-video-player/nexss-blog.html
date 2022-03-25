@@ -191,12 +191,16 @@ permalink: /en/333_blog-bitwig-studio/bitwig-VST-video-player/nexss-blog.html
 <h2>Setup Environment (Windows)</h2>
 <p>Please remember to <em>check licenses</em> of that great software before use them.</p>
 <ul>
-<li><strong>Download</strong> and install <a href="https://www.tobias-erichsen.de/software/loopmidi.html">loopMidi</a> by Tobias Erichsen.</li>
+<li>
+<p><strong>Download</strong> and install <a href="https://www.tobias-erichsen.de/software/loopmidi.html">loopMidi</a> by Tobias Erichsen.</p>
+</li>
 <li>
 <p><a href="http://xjadeo.sourceforge.net/download.html">Download</a> and install <a href="https://github.com/x42/xjadeo">xjadeo</a> <em>video player</em>.</p>
 <p><br></p>
 </li>
-<li>Run xJadeo from command line:</li>
+<li>
+<p>Run xJadeo from command line:</p>
+</li>
 </ul>
 <pre><code class="language-sh">"C:\Program Files\xjadeo\xjadeo.exe" -S -a -i 3 --midi-driver portmidi -m -1</code></pre>
 <p>more options on xjadeo <a href="http://xjadeo.sourceforge.net/xjadeo.html">cli arguments - here</a>.</p>
@@ -215,11 +219,13 @@ permalink: /en/333_blog-bitwig-studio/bitwig-VST-video-player/nexss-blog.html
 <li>
 <p>Go to the <strong>Bitwig Studio</strong>-&gt;<strong>Settings</strong>-&gt;<strong>Synchronization</strong> and click on <strong>MTC</strong> for "myMidiLoopback".</p>
 </li>
-<li>Now start playing music in the Bitwig Studio and you can see that video is synchronized.
+<li>
+<p>Now start playing music in the Bitwig Studio and you can see that video is synchronized.
 <br>
 <span style="color:green;">
 <strong>NOTE</strong> If it is still not playing with bitwig you may need to look at xjadeo starting. For example change from -m -1 (autodetect) to different number: -m 3 (when -1 didn't work)
-</span></li>
+</span></p>
+</li>
 </ol>
 <pre><code class="language-sh">"C:\Program Files\xjadeo\xjadeo.exe" -S -a -i 3 --midi-driver portmidi -m 3</code></pre>
 <p><br></p>

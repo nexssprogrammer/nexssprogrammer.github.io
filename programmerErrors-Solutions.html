@@ -94,9 +94,15 @@ permalink: /programmer.html/Errors-Solutions
                 <p>Nexss PROGRAMMER also shows <code>possible solutions</code> to the issue you may come up during development. You can also configure your own errors solutions definitions (regexp or string) in the <strong>_nexss.yml</strong> config file eg:</p>
 <h3>Syntax</h3>
 <ul>
-<li><strong>String</strong> - any string to be matched - {"pattern":"solution"}</li>
-<li><strong>Capturing Group</strong> - string + one (*.?) - when found \&lt;found1&gt; will be replaced.</li>
-<li><strong>Named Groups</strong> - (?\&lt;found1&gt;.*?) some string (?\&lt;found2&gt;.*?) - more info about named groups <a href="https://javascript.info/regexp-groups#named-groups">here</a>, or example of config: <a href="https://github.com/nexssp/language_java/blob/master/nexss.java.errors.js">Java Errors Solutions Example</a></li>
+<li>
+<p><strong>String</strong> - any string to be matched - {"pattern":"solution"}</p>
+</li>
+<li>
+<p><strong>Capturing Group</strong> - string + one (*.?) - when found \&lt;found1&gt; will be replaced.</p>
+</li>
+<li>
+<p><strong>Named Groups</strong> - (?\&lt;found1&gt;.*?) some string (?\&lt;found2&gt;.*?) - more info about named groups <a href="https://javascript.info/regexp-groups#named-groups">here</a>, or example of config: <a href="https://github.com/nexssp/language_java/blob/master/nexss.java.errors.js">Java Errors Solutions Example</a></p>
+</li>
 <li>
 <p><strong>Function</strong> - you can write own functions for error solutions (like automatic fixes etc.). Function can take 4 parameters: solution(<strong>errorBody</strong>, <strong>filename</strong>, <strong>arrayMatch</strong>, <strong>langConfig</strong>)</p>
 <ul>
@@ -164,17 +170,16 @@ permalink: /programmer.html/Errors-Solutions
             <div class="flex-shrink-0 col-12 col-md-3">
                 <ul>
 <li><a href="programmer.html/Home">Home</a></li>
-<li>Getting Started
-<ul>
+<li>Getting Started<ul>
 <li><a href="programmer.html/Concept-Overview">Overview</a></li>
 <li><a href="programmer.html/Nexss-Programmer-Cheat-sheet">Cheat sheet</a></li>
 <li><a href="programmer.html/Nexss-Files">.nexss</a></li>
 <li><a href="programmer.html/Tutorials">Tutorials</a></li>
 <li><a href="programmer.html/Multiple-OSes">Multiple OS'es</a></li>
 <li><a href="programmer.html/WSL-(Windows-Subsystem-Linux)">WSL</a></li>
-</ul></li>
-<li>Nexss Programmer Parts
-<ul>
+</ul>
+</li>
+<li>Nexss Programmer Parts<ul>
 <li><a href="programmer.html/Files---Templates">Files / Templates</a></li>
 <li><a href="programmer.html/Sequences">Sequences</a></li>
 <li><a href="programmer.html/Projects">New Projects</a></li>
@@ -190,20 +195,21 @@ permalink: /programmer.html/Errors-Solutions
 <li><a href="programmer.html/Environment">Environment</a></li>
 <li><a href="programmer.html/Nexss-Programmer-Edit">Edit / Fav Editor</a></li>
 <li><a href="programmer.html/Nexss-Programmer-Testing">Testing</a></li>
-</ul></li>
-<li>Development of Packages/Projects
-<ul>
+</ul>
+</li>
+<li>Development of Packages/Projects<ul>
 <li><a href="programmer.html/Debugging">Debugging</a></li>
 <li><a href="programmer.html/Testing">Testing</a></li>
-</ul></li>
-<li>Other
-<ul>
+</ul>
+</li>
+<li>Other<ul>
 <li><a href="programmer.html/Links">Related Links</a></li>
 <li><a href="programmer.html/Troubleshooting">Troubleshooting</a></li>
 <li><a href="programmer.html/Nexss-CLI-Development">Nexss CLI Development</a></li>
 <li><a href="programmer.html/Powershell">Powershell</a></li>
 <li><a href="programmer.html/Donate">Donate</a></li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
             </div>

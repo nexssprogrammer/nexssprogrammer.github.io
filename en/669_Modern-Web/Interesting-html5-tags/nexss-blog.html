@@ -188,7 +188,79 @@ permalink: /en/669_Modern-Web/Interesting-html5-tags/nexss-blog.html
       <div class="column2">
         <h1>Interesting HTML5 tags</h1>
 <p>Here is the list of interesting <strong>HTML5</strong> tags to save time and not implementing them unnecessarily in <strong>JavaScript</strong>.</p>
-<h2>Inputs</h2>
+<h3>dialog</h3>
+<pre><code class="language-html">&lt;button class="open"&gt;Open&lt;/button&gt;
+
+&lt;dialog id="modal" class="dialogWindow"&gt;
+  &lt;h2&gt;Dialog Box&lt;/h2&gt;
+  &lt;p&gt;To close you can also use &lt;strong&gt;escape key&lt;/strong&gt;.&lt;/p&gt;
+  &lt;form method="dialog"&gt;
+    &lt;label&gt;
+    Field Input: &lt;input type="text" placeholder="nexss.com" /&gt;&lt;/label&gt;
+    &lt;button&gt;Done&lt;/button&gt;
+  &lt;/form&gt;
+  &lt;button class="close"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;style&gt;
+  .dialogWindow {
+    background: linear-gradient(150deg, #135123, #18181c 64.06%);
+    color:white;
+  }
+  .dialogWindow::backdrop{
+    background: linear-gradient(150deg, #135123, rgba(12,0,0,0.1) 88.06%);
+  }
+  .dialogWindow :is(h2,p) {
+    color:white;
+  }
+  .dialogWindow input {
+    background-color:white !important;
+    padding: .2em;
+  }
+
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+document.querySelector(".open").addEventListener("click",() =&gt; {
+  modal.showModal();
+})
+document.querySelector(".close").addEventListener("click",() =&gt; {
+  modal.close();
+})
+&lt;/script&gt;</code></pre>
+<button class="open">Open</button>
+<dialog id="modal" class="dialogWindow">
+  <h2>Dialog Box</h2>
+  <p>To close you can also use <strong>escape key</strong>.</p>
+  <form method="dialog">
+    <label>
+    Field Input: <input type="text" placeholder="nexss.com"></label>
+    <button>Done</button>
+  </form>
+  <button class="close">Close</button>
+</dialog>
+<style>
+  .dialogWindow {
+    background: linear-gradient(150deg, #135123, #18181c 64.06%);
+    color:white;
+  }
+  .dialogWindow::backdrop{
+    background: linear-gradient(150deg, #135123, rgba(12,0,0,0.1) 88.06%);
+  }
+  .dialogWindow :is(h2,p) {
+    color:white;
+  }
+  .dialogWindow input {
+    background-color:white !important;
+    padding: .2em;
+  }
+</style>
+<script type="text/javascript">
+document.querySelector(".open").addEventListener("click",() => {
+  modal.showModal();
+})
+document.querySelector(".close").addEventListener("click",() => {
+  modal.close();
+})
+</script>
 <h3>color</h3>
 <pre><code class="language-html">&lt;input type="color" /&gt;</code></pre>
 <input type="color">
@@ -213,7 +285,7 @@ permalink: /en/669_Modern-Web/Interesting-html5-tags/nexss-blog.html
 <h3>search</h3>
 <pre><code class="language-html">&lt;input type="search" /&gt;</code></pre>
 <input type="search">
-<p>have extra button to clear the input</p>
+have extra button to clear the input
 <h3>tel</h3>
 <pre><code class="language-html">&lt;input type="tel" /&gt;</code></pre>
 <input type="tel">
@@ -233,7 +305,6 @@ permalink: /en/669_Modern-Web/Interesting-html5-tags/nexss-blog.html
 &lt;/datalist&gt;</code></pre>
 <input type="text" list="suggestions" size="50px" placeholder="search">
 <datalist id="suggestions">
-
 <option value="myValue">Details: some extra details</option>
 <option>Some other info</option>
 </datalist>
@@ -269,7 +340,6 @@ permalink: /en/669_Modern-Web/Interesting-html5-tags/nexss-blog.html
         padding: 12px 20px;
         transition: 0.3s ease;
     }
-
 </style>
       </div>
     </div>
