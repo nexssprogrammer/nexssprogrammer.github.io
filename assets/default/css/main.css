@@ -551,7 +551,7 @@ div.block {
   -o-background-size: cover;
   background-size: cover;
   background-color: #0d2e5b;
-  background-image: url(../images/welcome.jpg);
+  background-image: url(../images/welcome.webp);
   position: relative;
 }
 
