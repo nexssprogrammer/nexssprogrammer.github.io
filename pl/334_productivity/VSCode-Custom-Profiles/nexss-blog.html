@@ -200,7 +200,7 @@ It will create vscode_profiles folder inside your '<strong>home path</strong>' e
 <p><strong>%userprofile%</strong> - your home path<br>
 <strong>%~n0</strong> - script name without the extension.
 For example if your filename for executing <strong>Rust</strong> environment is <strong>code_rs.cmd</strong> then it will be <strong>code_rs</strong> for the folder. So if you want create another profile, just create file code_YourProfileName which includes below code and you are good to go. <em>Visual Studio Code</em> will create folders automatically.</p>
-<pre><code class="language-bat">code --extensions-dir %userprofile%/vscode_profiles/%~n0/exts --user-data-dir %userprofile%/vscode_profiles/%~n0/data %*</code></pre>
+<pre><code>code --extensions-dir %userprofile%/vscode_profiles/%~n0/exts --user-data-dir %userprofile%/vscode_profiles/%~n0/data %*</code></pre>
 <p>Create those files somewere where you have <strong>PATH</strong> added. For example you can add it to your <strong>D:\Programs\bin\</strong></p>
 <p>Then add this folder to your system path.</p>
 <pre><code># For the whole machine(all users):
@@ -211,9 +211,7 @@ or simpler with strings:
 # For the current user:
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";D:\Programs\bin", [EnvironmentVariableTarget]::User)
 or with strings:
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";D:\Programs\bin", "User")
-
-</code></pre>
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";D:\Programs\bin", "User")</code></pre>
 <h2>Powershell</h2>
 <p>Here is the implementation in the Powershell. You can add it to your profile script by <code>code $PROFILE</code>. It will open your powershell profile and you can paste it there.. Then from now you can run <code>code_rs .</code> <code>code_node somefolder</code> etc. etc.</p>
 <pre><code>function code_rs { code --extensions-dir $HOME/vscode_profiles/code-rust/exts --user-data-dir $HOME/vscode_profiles/code-rust/data $args }
@@ -391,8 +389,8 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
     Copyright © 2008 - 2022 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
   </div>
   <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
-    <b>Nexss.com</b> używa ciasteczka do rejestrowania danych statystycznych.<br>
-    Więcej tutaj: <a style="color:yellow;" target="_blank" href="pl/privacy-policy.html">Polityka Prywatności</a>.<a id="acceptCookie" style="color: white; font-size: 20px; line-height: 30px; text-decoration: none;" href="javascript:void(0)">×</a>
+    <b>Nexss.com</b> website uses cookies on this website to log statistics data and display adverts to
+     cover costs of the development Open Source software which is free for everyone. <a id="acceptCookie" style="color: white; font-size: 20px; line-height: 30px; text-decoration: none;" href="javascript:void(0)">×</a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script type="text/javascript">
