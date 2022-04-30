@@ -1,0 +1,417 @@
+---
+title: "BLOG Rust Lang - Bin And Lib One Crate"
+permalink: /13_Rust-lang/bin-and-lib-one-crate/nexss-blog.html
+---
+<!DOCTYPE html><html lang="en"><head>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-97241406-1');
+</script>
+
+  <title>
+    BLOG Rust Lang - Bin And Lib One Crate
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
+  <meta name="description" content="Bin And Lib One Crate - Nexss Programmer Blog">
+  
+  <meta property="og:title" content="Nexss.com">
+  <meta property="og:description" content="BLOG Rust Lang - Bin And Lib One Crate">
+  <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
+  <meta property="og:url" content="https://www.nexss.com">
+  <base href="/">
+<!-- css -->
+<link rel="stylesheet" href="assets/default/css/animate.css">
+<link href="assets/default/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="assets/default/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/default/css/main.css">
+<!-- js -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="assets/default/js/myscript.js"></script>
+<script src="assets/default/js/owl.carousel.min.js"></script>
+<script src="assets/default/js/wow.min.js"></script>   <meta name="google-site-verification" content="yckOL3tOjqWh4UFhhqE0FQdqZbNefWwml4VMsNj9Zcc">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header class="header" id="home">
+      <div class="header__top">
+    <div class="center">
+        <ul class="info">
+            <li>
+                <a id="ext3"></a>
+            </li>
+                                </ul>
+        <ul class="info" id="changeLanguage">
+            <li>Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg"></li>
+            <li>
+                <a style="color:yellow;font-weight:bold;" href="/en/nexss-blog.html">EN</a>
+            </li>
+            <li>/</li>
+            <li>
+                <a class="selected" href="/pl/13_Rust-lang/bin-and-lib-one-crate/nexss-blog.html">PL</a>
+            </li>
+        </ul>
+        <div class="soc clearfix">
+            <a title="Nexss.com Twitter page" href="https://twitter.com/NexssP">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a title="Nexss.com Facebook page" href="https://www.facebook.com/nexsscom/">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </div>
+    </div>
+    
+        <div class="center pr">    <a href="/" class="logo">
+        <img alt="Nexss - Innovations - Open Source Nexss Programmer and Software/Web Development / nexss.com" width="150" src="assets/default/images/header_logo.png">
+    </a>
+    <div class="nav clearfix">
+        <ul>
+    <li>
+        <a href="index.html#services">services</a>
+    </li>
+    <li>
+        <a class="career" href="nexss-career.html">career</a>
+
+    </li>
+    <li>
+        <a href="nexss-blog.html"><strong>blog</strong></a>
+
+    </li>
+    <li>
+        <a href="nexss-portfolio.html">portfolio</a>
+
+    </li>
+</ul>
+        <div class="btn__wrap__center">
+            <a href="easy-install-nexss-programmer.html" class="btn btn__medium btn__green">NEXSS
+                PROGRAMMER</a>
+        </div>
+    </div>
+    <div class="menu_toggle">
+        <i></i>
+    </div>
+    <div class="phone_nav">
+        <ul>
+    <li>
+        <a href="index.html#services">services</a>
+    </li>
+    <li>
+        <a class="career" href="nexss-career.html">career</a>
+
+    </li>
+    <li>
+        <a href="nexss-blog.html"><strong>blog</strong></a>
+
+    </li>
+    <li>
+        <a href="nexss-portfolio.html">portfolio</a>
+
+    </li>
+</ul>
+    </div>
+</div>
+    </div>
+      <div class="header__bottom">
+    </div>
+    </header>
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // below was: pre code -> code
+        document.querySelectorAll('code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+        // var y = document.querySelectorAll("pre code");
+        // for (var i = 0; i < y.length; i++) {
+        //   y[i].innerHTML = y[i].innerHTML.replace("\n", "");
+        // }
+    });
+</script><div class="block" id="nexssPage">
+  <div class="center">
+        <div class="row">
+      <div class="column1">
+                <h3>Welcome</h3>
+        <ul>
+                    <li><a href="0_Welcome/news/nexss-blog.html">News </a></li>
+                  </ul>
+                <h3>Nexss Programmer</h3>
+        <ul>
+                    <li><a href="11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction </a></li>
+                    <li><a href="11_blog-nexss-programmer/installation/nexss-blog.html">Installation </a></li>
+                    <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials </a></li>
+                    <li><a href="11_blog-nexss-programmer/frontend/nexss-blog.html">Frontend </a></li>
+                    <li><a href="11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage </a></li>
+                    <li><a href="11_blog-nexss-programmer/speak/nexss-blog.html">Speak </a></li>
+                    <li><a href="11_blog-nexss-programmer/file-dropper/nexss-blog.html">File Dropper </a></li>
+                  </ul>
+                <h3>Rust Lang</h3>
+        <ul>
+                    <li><a class="active" href="13_Rust-lang/bin-and-lib-one-crate/nexss-blog.html"><strong>Bin And Lib One Crate</strong> </a></li>
+                  </ul>
+                <h3>Node.js</h3>
+        <ul>
+                    <li><a href="21_Node.js/module_alias/nexss-blog.html">Module_alias </a></li>
+                    <li><a href="21_Node.js/lockfileVersion-issue/nexss-blog.html">LockfileVersion Issue </a></li>
+                    <li><a href="21_Node.js/require_with_import/nexss-blog.html">Require_with_import </a></li>
+                  </ul>
+                <h3>Bitwig Studio</h3>
+        <ul>
+                    <li><a href="333_blog-bitwig-studio/bitwig-VST-video-player/nexss-blog.html">Bitwig VST Video Player </a></li>
+                  </ul>
+                <h3>Productivity</h3>
+        <ul>
+                    <li><a href="334_productivity/VSCode-Custom-Profiles/nexss-blog.html">VSCode Custom Profiles </a></li>
+                  </ul>
+                <h3>Blender 3D</h3>
+        <ul>
+                    <li><a href="369_blog-blender-3D/custom-scripting-templates/nexss-blog.html">Custom Scripting Templates </a></li>
+                    <li><a href="369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
+                  </ul>
+                <h3>Natron</h3>
+        <ul>
+                    <li><a href="639_blog-natron/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
+                  </ul>
+                <h3>Modern Web</h3>
+        <ul>
+                    <li><a href="669_Modern-Web/Interesting-html5-tags/nexss-blog.html">Interesting Html5 Tags </a></li>
+                  </ul>
+                <h3>Our Free Packages</h3>
+        <ul>
+                    <li><a href="969_Our-free-packages/introduction/nexss-blog.html">Introduction </a></li>
+                    <li><a href="969_Our-free-packages/list-of-free-packages/nexss-blog.html">List Of Free Packages </a></li>
+                    <li><a href="969_Our-free-packages/@nexssp-command/nexss-blog.html">@nexssp Command </a></li>
+                    <li><a href="969_Our-free-packages/@nexssp-os/nexss-blog.html">@nexssp Os </a></li>
+                  </ul>
+              </div>
+      <div class="column2">
+        <h1>Both bin and lib in the one crate</h1>
+<p>On some of the online tutorials, folks says that you cannot have bin and lib together, but actually it is possible.
+Here is the example <strong>crate</strong> which allows for that (Of course you specify bin and lib):</p>
+<h2>Cargo.toml configuration</h2>
+<p>Here is a specification in the <strong>Cargo.toml</strong> file.</p>
+<pre><code class="language-toml">// Cargo.toml
+[lib] 
+name = "nexssp_os_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nexssp-os"
+path = "src/main.rs"</code></pre>
+<h2>Library file</h2>
+<pre><code class="language-rs">// src/lib.rs
+pub fn example_function() {
+    println!("Function from lib!");
+}</code></pre>
+<h2>Usage of the library</h2>
+<pre><code class="language-rs">// src.main.rs
+use nexssp_os_lib::example_function; // here is an import of the library
+fn main() {
+    println!("Hello, world!");
+    example_function();
+}</code></pre>
+        <span style="margin-top:30px;font-size:10px;font-color:#aaa;">If you found it valuable, please join to the nexss.com supporters at: <a href="fund.html">Support Nexss.com</a></span>
+      </div>
+    </div>
+  </div>
+  <style>
+    .column1 a.active{
+      color:#47167d;
+      font-weight:bold;
+    }
+
+    .column1 a,c
+  .column2 h2 {
+    border-bottom: 1px solid #d8d8d8;
+      padding: .1em 0;
+      margin-bottom: 0.5em;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -moz-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+    .column1 h2 {
+      font-size:1.2em;
+      margin:0;
+      padding:0;
+      color: #2124ff;
+    }
+
+  .column1 {
+    float: left;
+    width: 20%;
+    min-width:100px;
+  }
+
+  .column2 {
+    float: left;
+    width: 80%;
+
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #nexssPage {
+    min-width:600px;
+  }
+</style>
+<script>
+    var links = document.links;
+
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+  if (links[i].hostname != window.location.hostname) {
+    links[i].target = "_blank";
+  }
+}
+
+</script>
+</div>
+    
+        <!-- footer -->
+    <div class="push"></div>
+  </div>
+  <footer class="footer">
+     <div class="footer__top">
+  <div class="container">
+    
+    <section class="ft-main">
+      <div class="ft-main-item">
+        <h4 class="ft-title">About</h4>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a class="career" href="nexss-career.html">Career</a>
+</li>
+          <li><a href="nexss-portfolio.html">Portfolio</a>
+</li>
+          <li><a href="faq.html">FAQ</a>
+</li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="ft-main-item">
+        <h4 class="ft-title">Nexss Programmer</h4>
+        <ul>
+          <li><a title="Nexss Programmer - Video Presentation" target="_blank" style="color:yellow;" href="https://www.youtube.com/watch?v=7WbnYyEnBNk">Video Presentation</a></li>
+          <li><a href="easy-install-nexss-programmer.html">Install</a>
+</li>
+          <li>
+            <a href="nexss-programming-languages.html">Supported programming languages</a>
+
+          </li>
+          <li>
+            <a href="nexss-programmer-features.html">Features</a>
+
+
+          </li>
+          <li>
+            <a href="programmer.html">Documentation</a>
+
+          </li>
+          <li>
+            <a href="969_Our-free-packages/list-of-free-packages/nexss-blog.html">Packages</a>
+
+          </li>
+          <li>
+            <a href="fund.html">Fund</a>
+
+          </li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="ft-main-item">
+        <h4 class="ft-title">Learn</h4>
+        <ul>
+          <li><a href="nexss-blog.html"><strong>Blog</strong></a>
+</li>
+          <li><a href="11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials</a>
+</li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="ft-main-item">
+        <h4 class="ft-title">Contact</h4>
+        <ul>
+          <li><a href="index.html#contacts">Contact</a></li>
+          <li>
+            <h5><a style="color:#00ff90;" href="mailto:hello@nexss.com">Get a Quote</a></h5>
+          </li>
+          <li><a href="mailto:hello@nexss.com">
+              hello@nexss.com</a></li>
+          <!-- <li>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="terms-and-conditions.html">Terms and Conditions</a>
+                  </li> -->
+          <li>
+            <a href="fund.html">Fund</a>
+
+          </li>
+          <li></li>
+        </ul>
+      </div>
+          </section>
+    <ul>
+      <li>
+        <strong class="btn__green" style="padding:10px;border-radius: 12px;">GET A QUOTE <a href="mailto:hello@nexss.com"><i class="fa fa-hand-o-right"></i>
+            hello@nexss.com</a></strong>
+      </li>
+    </ul>
+  </div>
+</div>
+<style>
+  .footer__top ul li i {
+    color: black;
+  }
+</style>
+ <div class="footer__bottom">
+  <div class="center">
+    Copyright © 2008 - 2022 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
+  </div>
+  <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
+    <b>Nexss.com</b> website uses cookies on this website to log statistics data and display adverts to
+     cover costs of the development Open Source software which is free for everyone. <a id="acceptCookie" style="color: white; font-size: 20px; line-height: 30px; text-decoration: none;" href="javascript:void(0)">×</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script type="text/javascript">
+    if (Cookies.get('nxsCookieAccept') != 'true') {
+        $('#infoCookie').css('visibility', 'visible');
+    }
+    $('#acceptCookie').click(function (e) {
+        Cookies.set('nxsCookieAccept', 'true');
+        $('#infoCookie').css('visibility', 'hidden');
+    })
+</script>
+</div>
+<script>
+  $('#ext1, #ext2, #ext3').attr('href', 'm' + 'ai' + 'lto' + ':hello' + String.fromCharCode(64) + 'nexss.com');
+  $('#ext1, #ext2, #ext3').html('<i class="fa fa-envelope"></i> hello' + String.fromCharCode(64) + 'nexss.com');
+</script>
+  </footer>
+<script>
+    // NexssWE ©Nexss.com 2008-2022
+    var __nexssWE_crsf_name = "nexssCrsfTokennexss-blog_html";
+    var __nexssWE_crsf_token = "9d8a5df5c80e0bb9482d2f6cfe12d63645dd69f077b1ab52dd95b27e77fd4a46";
+</script>
+
+</body></html>
