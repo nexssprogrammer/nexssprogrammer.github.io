@@ -139,7 +139,7 @@ permalink: /en/easy-install-nexss-programmer.html
 </script><div class="block" id="nexssPage">
   <div class="center">
     <h1 class="block__title  wow bounceInDown">
-      <span>Nexss Programmer 2.5.98</span>
+      <span>Nexss Programmer 2.5.99</span>
       Easy Installation
     </h1>
     <br>
@@ -152,7 +152,7 @@ permalink: /en/easy-install-nexss-programmer.html
     <div>
       <div>
         <h2>Open Source</h2>
-        <h3>Install Nexss Programmer 2.5.98 Open Source</h3>
+        <h3>Install Nexss Programmer 2.5.99 Open Source</h3>
         <h4>Through NPM - <b>Linux, MacOS, Windows</b></h4>
           <p style="color:#666;font-size:smaller">note: <b>MacOS</b>
             are still in the development stage so not all languages are supported.</p>
@@ -496,20 +496,35 @@ permalink: /en/easy-install-nexss-programmer.html
   <div class="center">
     Copyright © 2008 - 2022 Nexss.com, Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg">
   </div>
-  <div id="infoCookie" style="z-index:369369369;position:fixed;bottom:0;height:55px;background-color:black;width:100%;visibility:hidden;">
-    <b>Nexss.com</b> website uses cookies on this website to log statistics data and display adverts to
-     cover costs of the development Open Source software which is free for everyone. <a id="acceptCookie" style="color: white; font-size: 20px; line-height: 30px; text-decoration: none;" href="javascript:void(0)">×</a>
+  <div id="infoCookie" style="
+    z-index: 369369369;
+    position: fixed;
+    bottom: 0;
+    height: 55px;
+    background-color: black;
+    width: 100%;
+    visibility: hidden;
+  ">
+  <b>Nexss.com</b>
+  website use cookies on this website to log statistics data.
+  <a id="acceptCookie" style="
+      color: white;
+      font-size: 20px;
+      line-height: 30px;
+      text-decoration: none;
+    " href="javascript:void(0)">×</a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script type="text/javascript">
-    if (Cookies.get('nxsCookieAccept') != 'true') {
-        $('#infoCookie').css('visibility', 'visible');
-    }
-    $('#acceptCookie').click(function (e) {
-        Cookies.set('nxsCookieAccept', 'true');
-        $('#infoCookie').css('visibility', 'hidden');
-    })
+  if (Cookies.get("nxsCookieAccept") != "true") {
+    $("#infoCookie").css("visibility", "visible");
+  }
+  $("#acceptCookie").click(function (e) {
+    Cookies.set("nxsCookieAccept", "true");
+    $("#infoCookie").css("visibility", "hidden");
+  });
 </script>
+
 </div>
 <script>
   $('#ext1, #ext2, #ext3').attr('href', 'm' + 'ai' + 'lto' + ':hello' + String.fromCharCode(64) + 'nexss.com');
