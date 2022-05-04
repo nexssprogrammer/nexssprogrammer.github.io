@@ -1,6 +1,6 @@
 ---
-title: "BLOG Nexss Programmer - Installation"
-permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
+title: "BLOG Modern Web - Lighting Fast Loading"
+permalink: /pl/669_Modern-Web/Lighting-fast-loading/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="pl"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,16 +13,16 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
 </script>
 
   <title>
-    BLOG Nexss Programmer - Installation
+    BLOG Modern Web - Lighting Fast Loading
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="Installation - Nexss Programmer Blog">
+  <meta name="description" content="Lighting Fast Loading - Nexss Programmer Blog">
   
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Nexss Programmer - Installation">
+  <meta property="og:description" content="BLOG Modern Web - Lighting Fast Loading">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -53,7 +53,7 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
         <ul class="info" id="changeLanguage">
             <li>Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
-                <a href="/en/11_blog-nexss-programmer/installation/nexss-blog.html">EN</a>
+                <a href="/en/669_Modern-Web/Lighting-fast-loading/nexss-blog.html">EN</a>
             </li>
             <li>/</li>
             <li>
@@ -147,7 +147,7 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
                 <h3>Nexss Programmer</h3>
         <ul>
                     <li><a href="pl/11_blog-nexss-programmer/introduction/nexss-blog.html">Introduction </a></li>
-                    <li><a class="active" href="pl/11_blog-nexss-programmer/installation/nexss-blog.html"><strong>Installation</strong> </a></li>
+                    <li><a href="pl/11_blog-nexss-programmer/installation/nexss-blog.html">Installation </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/tutorials/nexss-blog.html">Tutorials </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/frontend/nexss-blog.html">Frontend </a></li>
                     <li><a href="pl/11_blog-nexss-programmer/package_json_usage/nexss-blog.html">Package_json_usage </a></li>
@@ -187,7 +187,7 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
                 <h3>Modern Web</h3>
         <ul>
                     <li><a href="pl/669_Modern-Web/Interesting-html5-tags/nexss-blog.html">Interesting Html5 Tags </a></li>
-                    <li><a href="pl/669_Modern-Web/Lighting-fast-loading/nexss-blog.html">Lighting Fast Loading </a></li>
+                    <li><a class="active" href="pl/669_Modern-Web/Lighting-fast-loading/nexss-blog.html"><strong>Lighting Fast Loading</strong> </a></li>
                   </ul>
                 <h3>Our Free Packages</h3>
         <ul>
@@ -198,24 +198,21 @@ permalink: /pl/11_blog-nexss-programmer/installation/nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h1>Nexss Programmer - Installation</h1>
-<h2>Node.js</h2>
-<p>Nexss Programmer 2.x is written in the <a href="https://nodejs.org/">Node.js</a>. If you don't have it installed please go to the website <a href="https://nodejs.org/en/">https://nodejs.org/en/</a> and use instructions there.</p>
-<h2>Nexss Programmer</h2>
-<pre><code class="language-sh">npm i -g @nexssp/cli</code></pre>
-<h2>Using npx</h2>
-<p>You don't need to install Nexss Programmer and just use <strong>npx</strong> (after Node.js installation).</p>
-<pre><code class="language-sh">npx @nexssp/cli
+        <h1>Lightening Fast Loading of your website</h1>
+<p>There are few things which you may do to speed up your website loading.</p>
+<h2>Convert Images to WebP format</h2>
+<p>WebP images are much smaller then even jpg's. Depends on image and transparency, for example from <strong>260KB -&gt; 45KB</strong>.</p>
+<p>Convert images with Nexss Programmer easy!</p>
+<pre><code class="language-sh"># For individual images
+nexss Convert/ToWebP file1.jpg file2.jpg
+# OR if you don't want to install nexss programmer
+npx @nexssp/cli Convert/ToWebP file1.jpg file2.jpg
 
-# From version 2.5.78+ you can do:
-npx nexss Id</code></pre>
-<h2>Display help</h2>
-<pre><code class="language-sh">nexss help
-npx nexss help</code></pre>
-<h2>Enable/Disable colors</h2>
-<p><img src="https://user-images.githubusercontent.com/53263666/144868514-bfa2b39f-dc1d-4b40-9565-b948e902c95a.png" alt="Enable colored outout - nexss programmer"></p>
-<pre><code class="language-sh">nexss -output-colors 1 # Enable colorized output
-nexss -output-colors 0</code></pre>
+# For whole folder of images.
+nexss Convert/ToWebP folder # folder contains jpg, png or gif images. Nexss Programmer will save you webp images in the current folder you are in. use npx accordingly</code></pre>
+<p>TODO: More flexible selection of images like recursive subfolders and more..</p>
+<h2>More soon</h2>
+<p>WIP..</p>
         <span style="margin-top:30px;font-size:10px;font-color:#aaa;">If you found it valuable, please join to the nexss.com supporters at: <a href="pl/fund.html">Support Nexss.com</a></span>
       </div>
     </div>
