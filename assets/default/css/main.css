@@ -100,6 +100,8 @@ html,
 body {
   font-family: "Lato", sans-serif;
   height: 99.5%;
+  /* font-size: 112.5% !important;
+  line-height: 2em !important; */
 }
 
 /* code {
@@ -136,6 +138,13 @@ body {
 ol,
 ul {
   list-style: none;
+}
+
+#nexssPage div.column2 ol,
+#nexssPage div.column2 ul {
+  list-style: inherit;
+  padding-left: 20px;
+  margin: 1em 0;
 }
 
 blockquote,
@@ -326,6 +335,7 @@ h4 {
   color: #0f356c;
   font-size: 50px;
   line-height: 40px;
+  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -434,10 +444,11 @@ h4 {
 
 p,
 div.block {
-  font-size: 16px;
+  font-size: 1.2em;
   line-height: 25px;
   /* font-family: "Lato", sans-serif; */
   color: #262626;
+  margin-bottom: 0.3em;
 }
 
 /* header */
@@ -2761,4 +2772,17 @@ footer input[type="submit"] {
 
 footer h4 {
   text-align: center;
+}
+
+#nexssPage pre {
+  margin: 0.9em 0;
+}
+
+#nexssPage .hljs {
+  display: inline-block;
+  width: 100%;
+}
+
+#nexssPage p .hljs {
+  display: inline;
 }
