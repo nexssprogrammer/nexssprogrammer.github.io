@@ -1,6 +1,6 @@
 ---
-title: "BLOG Blender 3D - Nexss Programmer Nodes"
-permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
+title: "BLOG Rust Lang - Serde_serialize_deserialize"
+permalink: /13_Rust-lang/serde_serialize_deserialize/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="en"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,16 +13,16 @@ permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
 </script>
 
   <title>
-    BLOG Blender 3D - Nexss Programmer Nodes
+    BLOG Rust Lang - Serde_serialize_deserialize
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="Nexss Programmer Nodes - Nexss Programmer Blog">
+  <meta name="description" content="Serde_serialize_deserialize - Nexss Programmer Blog">
   
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Blender 3D - Nexss Programmer Nodes">
+  <meta property="og:description" content="BLOG Rust Lang - Serde_serialize_deserialize">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -57,7 +57,7 @@ permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
             </li>
             <li>/</li>
             <li>
-                <a class="selected" href="/pl/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">PL</a>
+                <a class="selected" href="/pl/13_Rust-lang/serde_serialize_deserialize/nexss-blog.html">PL</a>
             </li>
         </ul>
         <div class="soc clearfix">
@@ -160,7 +160,7 @@ permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
                     <li><a href="13_Rust-lang/speed-up-Rust-workflow/nexss-blog.html">Speed Up Rust Workflow </a></li>
                     <li><a href="13_Rust-lang/useful-Rust-macros/nexss-blog.html">Useful Rust Macros </a></li>
                     <li><a href="13_Rust-lang/cargo-edit-cli/nexss-blog.html">Cargo Edit Cli </a></li>
-                    <li><a href="13_Rust-lang/serde_serialize_deserialize/nexss-blog.html">Serde_serialize_deserialize </a></li>
+                    <li><a class="active" href="13_Rust-lang/serde_serialize_deserialize/nexss-blog.html"><strong>Serde_serialize_deserialize</strong> </a></li>
                   </ul>
                 <h3>Node.js</h3>
         <ul>
@@ -179,7 +179,7 @@ permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
                 <h3>Blender 3D</h3>
         <ul>
                     <li><a href="369_blog-blender-3D/custom-scripting-templates/nexss-blog.html">Custom Scripting Templates </a></li>
-                    <li><a class="active" href="369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html"><strong>Nexss Programmer Nodes</strong> </a></li>
+                    <li><a href="369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
                   </ul>
                 <h3>Natron</h3>
         <ul>
@@ -199,8 +199,14 @@ permalink: /369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h1>Nexss Programmer Blender Nodes</h1>
-<p>We are developing <strong>Blender</strong>'s <strong>Nexss Programmer</strong> nodes so you will be able to use all programming languages in the Blender as well all functionality of the <strong>Nexss Programmer</strong>.</p>
+        <h1>Serde - Serialize, Deserialize</h1>
+<h2>Troubleshooting</h2>
+<pre><code>the trait `for&lt;'de&gt; Deserialize&lt;'de&gt;` is not implemented for ..</code></pre>
+<p>This error appears when the <strong>serde</strong> is not configured properly in the Cargo.toml file.
+You need to add features="derive" to the toml file or use cargo-edit.</p>
+<pre><code class="language-toml">serde = { version = "1.0.137", features = ["derive"] }</code></pre>
+<p>With <a href="https://crates.io/crates/cargo-edit">cargo-edit</a> is much easier:</p>
+<pre><code class="language-sh">cargo add serde --features=derive</code></pre>
         <span style="margin-top:30px;font-size:10px;font-color:#aaa;">If you found it valuable, please join to the nexss.com supporters at: <a href="fund.html">Support Nexss.com</a></span>
       </div>
     </div>
