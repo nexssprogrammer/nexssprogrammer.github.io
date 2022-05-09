@@ -1,6 +1,6 @@
 ---
-title: "BLOG Blender 3D - How We Made A Presentation"
-permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
+title: "BLOG Rust Lang - Cargo.toml Workspace"
+permalink: /pl/13_Rust-lang/Cargo.toml-workspace/nexss-blog.html
 ---
 <!DOCTYPE html><html lang="pl"><head>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97241406-1"></script>
@@ -13,16 +13,16 @@ permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
 </script>
 
   <title>
-    BLOG Blender 3D - How We Made A Presentation
+    BLOG Rust Lang - Cargo.toml Workspace
   </title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="blog, nexss programmer, tips and tricks,blender,natron,programming">
-  <meta name="description" content="How We Made A Presentation - Nexss Programmer Blog">
+  <meta name="description" content="Cargo.toml Workspace - Nexss Programmer Blog">
   
   <meta property="og:title" content="Nexss.com">
-  <meta property="og:description" content="BLOG Blender 3D - How We Made A Presentation">
+  <meta property="og:description" content="BLOG Rust Lang - Cargo.toml Workspace">
   <meta property="og:image" content="https://www.nexss.com/assets/default/images/header_logo.png">
   <meta property="og:url" content="https://www.nexss.com">
   <base href="/">
@@ -53,7 +53,7 @@ permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
         <ul class="info" id="changeLanguage">
             <li>Made with ❤️ in <img alt="Nexss.com / Poland / Developed with Love" height="10" src="assets/images/flagPL.jpg"></li>
             <li>
-                <a href="/en/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html">EN</a>
+                <a href="/en/13_Rust-lang/Cargo.toml-workspace/nexss-blog.html">EN</a>
             </li>
             <li>/</li>
             <li>
@@ -161,7 +161,7 @@ permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
                     <li><a href="pl/13_Rust-lang/useful-Rust-macros/nexss-blog.html">Useful Rust Macros </a></li>
                     <li><a href="pl/13_Rust-lang/cargo-edit-cli/nexss-blog.html">Cargo Edit Cli </a></li>
                     <li><a href="pl/13_Rust-lang/serde-serialize-and-deserialize/nexss-blog.html">Serde Serialize And Deserialize </a></li>
-                    <li><a href="pl/13_Rust-lang/Cargo.toml-workspace/nexss-blog.html">Cargo.toml Workspace </a></li>
+                    <li><a class="active" href="pl/13_Rust-lang/Cargo.toml-workspace/nexss-blog.html"><strong>Cargo.toml Workspace</strong> </a></li>
                   </ul>
                 <h3>Node.js</h3>
         <ul>
@@ -181,7 +181,7 @@ permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
         <ul>
                     <li><a href="pl/369_blog-blender-3D/custom-scripting-templates/nexss-blog.html">Custom Scripting Templates </a></li>
                     <li><a href="pl/369_blog-blender-3D/nexss-programmer-nodes/nexss-blog.html">Nexss Programmer Nodes </a></li>
-                    <li><a class="active" href="pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html"><strong>How We Made A Presentation</strong> </a></li>
+                    <li><a href="pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html">How We Made A Presentation </a></li>
                   </ul>
                 <h3>Natron</h3>
         <ul>
@@ -201,31 +201,54 @@ permalink: /pl/369_blog-blender-3D/how-we-made-a-presentation/nexss-blog.html
                   </ul>
               </div>
       <div class="column2">
-        <h1>How we made a Nexss Programmer's presentation</h1>
-<p><em>If you need scripts or sources of this animation for free for your educational purposes please send us an email.</em></p>
-<p>To make the <code>Nexss Programmer's 2.x</code> presentation with have made an animation with the all logos technologies which are implemented to the Nexss Programmer: Programming languages, tools and companies.</p>
-<p><a href="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-3DViewLogos.webp"><img src="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-3DViewLogos_thumb_big.webp" alt="Blender - Nexss Programmer animation"></a></p>
-<h2>Technology Stack:</h2>
+        <h1>Rust Cargo workspace</h1>
+<p>Important Note: tests (cargo test) will not work for all crates (defined in the <em>workspaces</em>), if the main <strong>Cargo.toml</strong> (virtual manifest) will have specified [package] (name, version, edition). Best to keep <em>workspace</em> only (?)</p>
+<p>Example of working workspace setup:</p>
 <ul>
-<li>Blender 3D</li>
-<li>Animation Nodes</li>
-<li>Natron</li>
-<li>Python</li>
-<li>Photoshop</li>
+<li>
+<p><strong>crates</strong></p>
+<ul>
+<li>
+<p><strong>lib1</strong> <em>(--lib)</em> lib1/src/lib.rs</p>
+<pre><code class="language-toml">[package]
+name = "lib1"
+version = "0.1.0"
+edition = "2021"</code></pre>
+</li>
+<li>
+<p><strong>lib2</strong> <em>(--lib)</em> lib2/src/lib.rs</p>
+<pre><code class="language-toml">[package]
+name = "lib2"
+version = "0.1.0"
+edition = "2021"</code></pre>
+</li>
 </ul>
-<p><a href="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-LogosMaterialsNodesSetup.webp"><img src="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-LogosMaterialsNodesSetup_thumb.gif" alt="Blender - Animation Nodes"></a>
-<a href="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-MaterialLogoNodeSetup.webp"><img src="assets/images/nexss-programmer-animation/NexssProgrammerAnimation-Screenshoot1-MaterialLogoNodeSetup_thumb.gif" alt="Blender - Animation Nodes"></a>
-<a href="assets/images/nexss-programmer-animation/NexssProgrammerAnimationNatron-1.webp"><img src="assets/images/nexss-programmer-animation/NexssProgrammerAnimationNatron-1_thumb.gif" alt="Blender - Natron - one of the scenes 1"></a>
-<a href="assets/images/nexss-programmer-animation/NexssProgrammerAnimationNatron-2.webp"><img src="assets/images/nexss-programmer-animation/NexssProgrammerAnimationNatron-2_thumb.gif" alt="Blender - Natron - one of the scenes 2"></a></p>
-<h2>Future Prototypes</h2>
-<p><a href="assets/images/nexss-programmer-animation/nexssProgrammerGUI.webp"><img src="assets/images/nexss-programmer-animation/nexssProgrammerGUI_thumb.gif" alt="Blender - Animation Nodes"></a></p>
-<h2>Some other pictures</h2>
-<p>Below picture is made with <strong>Blender</strong> and then picture is taken with the mobile and then again modified/adjusted in <strong>Natron</strong> and <strong>Photoshop</strong>.</p>
-<p><a href="assets/images/nexss-programmer-animation/NexssLogo_TV_IMG_20200122_113910.webp"><img src="assets/images/nexss-programmer-animation/NexssLogo_TV_IMG_20200122_113910_thumb.webp" alt="Blender - Nexss Programmer animation"></a></p>
-<p>Here is the full animation. Please let us know your thoughts about it.
-<br></p>
-<iframe width="474" height="267" src="https://www.youtube.com/embed/7WbnYyEnBNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<div></div>
+</li>
+<li>
+<p><strong>yourpackage</strong> <em>(--bin)</em> yourpackage/src/main.rs
+Cargo.toml</p>
+<pre><code class="language-toml">[dependencies]
+# includes your libs
+lib1 = { path = "../lib1" }
+lib2 = { path = "../lib2" }</code></pre>
+</li>
+<li>
+<p>Cargo.toml (virtual - specify folders for libs)</p>
+</li>
+</ul>
+<pre><code class="language-toml">[workspace]
+members = ["crates/*"]</code></pre>
+<p>Run tests for all packages:</p>
+<pre><code class="language-sh">cargo test # in the main folder - will run tests also for lib1, and lib2</code></pre>
+<p><strong>Important Note:</strong> If you put dependencies in this <code>Cargo.toml</code> (the virtual setup / workspace), the 'cargo test' will not run tests in the lib1, and lib2 etc., so it seems the safest is to just put workspace (?).</p>
+<h2>Multiple binaries</h2>
+<p>if you have multiple examples (usage of <em>cargo run --example</em>) with the same name or binaries (usage of <em>cargo run --bin</em>), you may want to use 'default-members' in the workspace definition. Please see below.</p>
+<h2>Example workspace</h2>
+<p>Here contains includes</p>
+<pre><code class="language-toml">[workspace]
+members = ["crates/*", "some/other/path/member2"]
+exclude = ["crates/foo", "path/to/other"]
+default-members = ["crates/lib1"]</code></pre>
         <span style="margin-top:30px;font-size:10px;font-color:#aaa;">If you found it valuable, please join to the nexss.com supporters at: <a href="pl/fund.html">Support Nexss.com</a></span>
       </div>
     </div>
