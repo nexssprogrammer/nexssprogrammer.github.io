@@ -208,29 +208,27 @@ permalink: /en/13_Rust-lang/Cargo.toml-workspace/nexss-blog.html
 <li>
 <p><strong>crates</strong></p>
 <ul>
-<li>
-<p><strong>lib1</strong> <em>(--lib)</em> lib1/src/lib.rs</p>
+<li><strong>lib1</strong> <em>(--lib)</em> lib1/src/lib.rs</li>
+</ul>
 <pre><code class="language-toml">[package]
 name = "lib1"
 version = "0.1.0"
 edition = "2021"</code></pre>
-</li>
-<li>
-<p><strong>lib2</strong> <em>(--lib)</em> lib2/src/lib.rs</p>
+<ul>
+<li><strong>lib2</strong> <em>(--lib)</em> lib2/src/lib.rs</li>
+</ul>
 <pre><code class="language-toml">[package]
 name = "lib2"
 version = "0.1.0"
 edition = "2021"</code></pre>
-</li>
-<li>
-<p><strong>yourpackage</strong> <em>(--bin)</em> yourpackage/src/main.rs
-Cargo.toml</p>
+<ul>
+<li><strong>yourpackage</strong> <em>(--bin)</em> yourpackage/src/main.rs
+Cargo.toml</li>
+</ul>
 <pre><code class="language-toml">[dependencies]
 # includes your libs
 lib1 = { path = "../lib1" }
 lib2 = { path = "../lib2" }</code></pre>
-</li>
-</ul>
 </li>
 <li>
 <p>Cargo.toml (virtual - specify folders for libs)</p>
